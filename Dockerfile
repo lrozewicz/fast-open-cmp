@@ -13,7 +13,7 @@
 ARG WORDPRESS_IMAGE=wordpress:7.1.3-php8.3-apache
 
 # ---------------------------------------------------------------- tests
-FROM node:22-alpine AS sdk-test
+FROM node:26-alpine AS sdk-test
 WORKDIR /src
 COPY sdk/package.json sdk/package-lock.json sdk/
 RUN cd sdk && npm ci --no-audit --no-fund
