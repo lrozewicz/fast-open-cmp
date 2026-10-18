@@ -34,7 +34,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@iabtechlabtcf/cmpapi": "^1.5.13",
+        "@iabtechlabtcf/cmpapi": "^1.5.22",
         "@iabtechlabtcf/core": "^1.5.13",
         "@iabtechlabtcf/stub": "^1.5.13"
     },
