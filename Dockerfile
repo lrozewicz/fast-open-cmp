@@ -68,7 +68,9 @@ RUN set -eux; \
     a2enmod -q remoteip rewrite; \
     a2dissite -q 000-default; \
     a2ensite -q focmp; \
-    : > /etc/apache2/ports.conf
+    : > /etc/apache2/ports.conf; \
+    printf '%s\n' ': ${APACHE_PUBLIC_ORIGIN:=${WORDPRESS_URL:-http://localhost:8080}}' 'export APACHE_PUBLIC_ORIGIN' \
+      >> /etc/apache2/envvars
 
 COPY --chown=root:root plugin/ /var/www/html/wp-content/plugins/fast-open-cmp/
 RUN rm -rf /var/www/html/wp-content/plugins/fast-open-cmp/tests \
