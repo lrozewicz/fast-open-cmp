@@ -8,13 +8,26 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    ignore:
+      # PHP in the test stage follows the runtime (wordpress:*-php8.3-apache); bump both together.
+      - dependency-name: php
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
+      # Node 26: three SDK tests fail (Node's built-in localStorage); upgrade together with a fix.
+      - dependency-name: node
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: npm
     directory: /sdk
     schedule:
       interval: weekly
     groups:
+      # Minor/patch updates of dev tooling in one PR; majors (vite, vitest, eslint...) come one by one.
       sdk-dev-dependencies:
         dependency-type: development
+        update-types: ["minor", "patch"]
+    ignore:
+      # TypeScript 7 is not supported by typescript-eslint yet.
+      - dependency-name: typescript
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: composer
     directory: /plugin
     schedule:
