@@ -1,0 +1,10 @@
+.git
+.github
+**/node_modules
+sdk/dist
+plugin/vendor
+plugin/.phpunit.cache
+test-results
+playwright-report
+e2e/.auth
+.env
