@@ -11,6 +11,18 @@ WordPress transients (DB-backed) and the public SDK/REST responses still carry
 `Cache-Control` headers, so it's perfectly usable; it just won't be as fast as a
 tuned host. This is the right path for most external users.
 
+### Path C — container image (Kubernetes)
+The root `Dockerfile` builds an immutable image: WordPress, this plugin and an
+environment-driven `wp-config.php` (`docker/image/`). It runs as UID 10001 on port 8080
+with a read-only root filesystem; only `/tmp` and `wp-content/uploads` are writable,
+`GET /healthz` answers 200. Configuration comes from environment variables (`DB_HOST`,
+`DB_NAME`, `DB_USER`, `DB_PASSWORD`, `WORDPRESS_URL`, ...; see `docker/image/wp-config.php`).
+Run `wp-init` once before the web server (e.g. as an init container): it waits for the
+database and installs WordPress with `WORDPRESS_ADMIN_*` so the web installer is never
+exposed. Schedule `GET /wp-cron.php` every few minutes (WP pseudo-cron is disabled).
+WordPress and plugin updates ship as a new image; the admin panel cannot modify files.
+The project's own instance is deployed this way by the shared CI/CD.
+
 ### Path B — self-host it fast (this guide)
 If you run your own WordPress via Docker and want maximum performance (hot OPcache,
 Redis object cache, scheduled tasks off visitor requests), use the production overlay
