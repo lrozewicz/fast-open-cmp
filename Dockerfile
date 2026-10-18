@@ -22,7 +22,7 @@ RUN cd sdk && npm run typecheck && npm run lint && npm run format:check && npm t
 RUN node scripts/verify-bundle.mjs && node scripts/sync-version.mjs --check \
     && touch /sdk-ok
 
-FROM php:8.3-cli-alpine AS php-test
+FROM php:8.5-cli-alpine AS php-test
 COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
 RUN apk add --no-cache git unzip
 WORKDIR /src/plugin
