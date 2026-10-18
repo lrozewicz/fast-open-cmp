@@ -35,7 +35,7 @@
     "license": "ISC",
     "dependencies": {
         "@iabtechlabtcf/cmpapi": "^1.5.13",
-        "@iabtechlabtcf/core": "^1.5.13",
+        "@iabtechlabtcf/core": "^1.5.22",
         "@iabtechlabtcf/stub": "^1.5.13"
     },
     "browserslist": "> 0.5%, last 2 versions, not dead"
