@@ -31,6 +31,9 @@ export default defineConfig({
     }
   },
   build: {
+    // The consent box runs on every page of client sites: keep the browser baseline of Vite 5
+    // ('modules'), not the newer Vite 7+ default ('baseline-widely-available', Safari 16.4+).
+    target: ['es2020', 'edge88', 'firefox78', 'chrome87', 'safari14'],
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: true,
@@ -80,6 +83,6 @@ export default defineConfig({
     devSourcemap: true,
   },
   optimizeDeps: {
-    include: ['@iabtcf/core']
+    include: ['@iabtechlabtcf/core']
   },
 });
