@@ -9,6 +9,10 @@ export default defineConfig({
       '@': resolve(__dirname, './src'),
     },
   },
+  server: {
+    // src/tcf/spec.test.ts reads the plugin's PHP constants (?raw) to keep SDK and plugin in sync.
+    fs: { allow: [resolve(__dirname, '.'), resolve(__dirname, '../plugin/includes')] },
+  },
   test: {
     environment: 'jsdom',
     include: ['src/**/*.{test,spec}.ts'],
