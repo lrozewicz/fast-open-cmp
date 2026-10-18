@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMP E2E harness</title>
+    <!--
+      Parametrized harness for Playwright E2E. Loads the CMP SDK for the domain
+      given as ?key=<public key> or ?domain_id=N in the page URL. No GPT/gtag is loaded: the SDK stubs
+      window.gtag itself and pushes Consent Mode signals into window.dataLayer,
+      which the tests read. See e2e/seed.sql for the domain_id ↔ mode mapping.
+    -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            // ?key=<public key> (current snippets) or ?domain_id=N (legacy snippets)
+            var key = params.get('key');
+            var domain = key
+                ? 'key=' + encodeURIComponent(key)
+                : 'domain_id=' + encodeURIComponent(params.get('domain_id') || '1');
+            var env = params.get('env') === 'test' ? '&env=test' : '';
+            // Synchronous document.write keeps the SDK in normal head-script load order.
+            document.write(
+                '<scr' + 'ipt src="/?rest_route=/fast-open-cmp/v1/sdk&' + domain + env + '"></scr' + 'ipt>'
+            );
+        })();
+    </script>
+</head>
+<body>
+    <main>
+        <h1>CMP E2E harness</h1>
+        <p>Consent box should appear on first load.</p>
+    </main>
+    <!-- Consent-gated script (prior blocking): runs only with consent for IAB purpose 1. -->
+    <script type="text/plain" data-cmp-requires="purpose-1">
+        window.__gatedRuns = (window.__gatedRuns || 0) + 1;
+    </script>
+    <div id="cmp-footer" style="position:fixed;bottom:0;left:0;width:100%;text-align:center;padding:10px">
+        <a href="#" id="cmp-footer-link">Zgody</a>
+    </div>
+</body>
+</html>

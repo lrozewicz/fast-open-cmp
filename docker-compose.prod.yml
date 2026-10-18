@@ -1,0 +1,94 @@
+# Production-oriented overrides for Fast Open CMP.
+#
+# Apply ON TOP of the base file (compose merges them):
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+#
+# This is a STARTING POINT, not a turnkey production deploy. Before any real
+# deployment you still need: TLS / a reverse proxy in front, real secrets (not
+# the .env defaults), off-host database backups, and host-level hardening.
+# See docs/production.md for the full checklist and the rationale behind each
+# setting (it maps 1:1 to the dev-vs-prod performance analysis).
+
+services:
+  wordpress:
+    # Stock WordPress + phpredis + WP-CLI (see docker/wordpress/Dockerfile).
+    build:
+      context: .
+      dockerfile: docker/wordpress/Dockerfile
+    image: focmp-wordpress:prod
+    environment:
+      # Injected verbatim into wp-config.php by the official image.
+      # NOTE: '$$' is how docker-compose escapes a literal '$' (for PHP's $_SERVER).
+      WORDPRESS_CONFIG_EXTRA: |
+        /* Take scheduled tasks off visitor requests — the wp-cron sidecar below
+           pings wp-cron.php on a fixed interval instead. Removes the random
+           multi-second stalls when an update-check fires on a page load. */
+        define('DISABLE_WP_CRON', true);
+
+        /* Trim DB growth / lock down the editor on prod. */
+        define('WP_POST_REVISIONS', 10);
+        define('DISALLOW_FILE_EDIT', true);
+
+        /* Redis object cache backend (the redis-init service installs the
+           plugin and enables the object-cache.php drop-in that reads these). */
+        define('WP_REDIS_HOST', 'redis');
+        define('WP_REDIS_PORT', 6379);
+
+        /* Honour the reverse proxy's TLS termination so admin/login use https. */
+        if (isset($$_SERVER['HTTP_X_FORWARDED_PROTO']) && $$_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+            $$_SERVER['HTTPS'] = 'on';
+        }
+    volumes:
+      # Ship a built plugin and mount it read-only — never edit in place on prod.
+      - ./plugin:/var/www/html/wp-content/plugins/fast-open-cmp:ro
+      # Hot, timestamp-validation-off OPcache (see docker/php/opcache.ini).
+      - ./docker/php/opcache.ini:/usr/local/etc/php/conf.d/zz-focmp-opcache.ini:ro
+    restart: always
+
+  # System cron replacing WP's per-request pseudo-cron (disabled above).
+  wp-cron:
+    image: curlimages/curl:8.10.1
+    restart: always
+    depends_on:
+      - wordpress
+    # Internal hostname 'wordpress' on port 80; never exposed publicly.
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - "while true; do curl -fsS -m 30 'http://wordpress/wp-cron.php?doing_wp_cron' >/dev/null 2>&1 || true; sleep 300; done"
+
+  # Persistent object-cache backend. Transients (CMP config, vendor lists) move
+  # from the DB into RAM once the drop-in is installed — see docs/production.md.
+  redis:
+    image: redis:7-alpine
+    restart: always
+    command: ["redis-server", "--maxmemory", "256mb", "--maxmemory-policy", "allkeys-lru", "--save", ""]
+
+  # One-shot: install the Redis Object Cache plugin and enable its drop-in, then
+  # exit. Idempotent — safe to re-run (e.g. after completing WP setup on a fresh
+  # deploy):  docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d redis-init
+  redis-init:
+    build:
+      context: .
+      dockerfile: docker/wordpress/Dockerfile
+    image: focmp-wordpress:prod
+    restart: "no"
+    user: www-data
+    # www-data's home isn't writable; give WP-CLI a scratch dir for its cache.
+    environment:
+      HOME: /tmp
+    depends_on:
+      wordpress:
+        condition: service_started
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    volumes:
+      - wp_data:/var/www/html
+      - ./docker/wordpress/redis-object-cache-init.sh:/usr/local/bin/redis-object-cache-init.sh:ro
+    entrypoint: ["sh", "/usr/local/bin/redis-object-cache-init.sh"]
+
+  # phpMyAdmin must not run in production. Gating it behind a profile keeps it
+  # out of the default 'up' for this overlay (start it explicitly only if needed).
+  phpmyadmin:
+    profiles: ["debug"]

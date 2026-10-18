@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMP Framework Demo</title>
+    <script src="/?rest_route=/fast-open-cmp/v1/sdk&domain_id=1"></script>
+    <!-- Google Publisher Tags (GPT) -->
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+        window.googletag = window.googletag || {cmd: []};
+
+        googletag.cmd.push(function() {
+            googletag.defineSlot('/6355419/Travel/Europe', [300, 250], 'ad-slot-1')
+                .addService(googletag.pubads());
+
+            googletag.defineSlot('/6355419/Travel/Europe/Banner', [728, 90], 'ad-slot-2')
+                .addService(googletag.pubads());
+
+            // Modern GPT page-level config (replaces the deprecated
+            // pubads().disableInitialLoad()/enableSingleRequest()/collapseEmptyDivs()).
+            // disableInitialLoad: hold the first ad request until consent is set.
+            googletag.setConfig({
+                disableInitialLoad: true,
+                singleRequest: true,
+                collapseDiv: 'ON_NO_FILL'
+            });
+            googletag.enableServices();
+        });
+    </script>
+</head>
+<body>
+    <main class="container">
+        <h1>CMP Framework Demo</h1>
+        <p>This is a demo page for the CMP Framework. The consent box should appear automatically when you first visit the site.</p>
+        <p>If you have already given consent, click the "Zgody" link in the footer to manage your preferences.</p>
+
+        <div class="grid">
+            <div>
+                <h2>What is CMP?</h2>
+                <p>CMP (Consent Management Platform) helps websites comply with GDPR and other privacy regulations by giving users control over their personal data.</p>
+            </div>
+            <div>
+                <h2>IAB TCF</h2>
+                <p>IAB Europe Transparency &amp; Consent Framework (TCF) is an industry standard that enables websites, advertisers, and technology providers to process user data in compliance with regulations.</p>
+            </div>
+        </div>
+
+        <!-- Ad Slot 2: Leaderboard (728x90) -->
+        <div style="margin: 10px auto; max-width: 728px;">
+            <div id="ad-slot-2" style="width: 728px; height: 90px; margin: 0 auto; border: 1px solid #ccc; background-color: #f8f9fa;">
+                <script>
+                    googletag.cmd.push(function() {
+                        googletag.display('ad-slot-2');
+                    });
+                </script>
+            </div>
+            <small style="display: block; margin-top: 5px; color: #666;">Ad slot (728x90)</small>
+        </div>
+
+        <article>
+            <h2>How does consent work?</h2>
+            <p>When you visit a site for the first time, a consent banner is displayed. You can:</p>
+            <ul>
+                <li>Accept all consents</li>
+                <li>Go to advanced settings and choose specific data processing purposes</li>
+                <li>Reject all optional consents</li>
+            </ul>
+            <p>Your preferences are saved in the "eupubconsent-v2" cookie as a TC String containing encoded information about your consent choices.</p>
+
+            <!-- Ad Slot 1: Medium Rectangle (300x250) -->
+            <div style="margin: 20px 0; text-align: center;">
+                <div id="ad-slot-1" style="width: 300px; height: 250px; margin: 0 auto; border: 1px solid #ccc; background-color: #f8f9fa;">
+                    <script>
+                        googletag.cmd.push(function() {
+                            googletag.display('ad-slot-1');
+                        });
+                    </script>
+                </div>
+                <small style="display: block; margin-top: 5px; color: #666;">Ad slot (300x250)</small>
+            </div>
+        </article>
+    </main>
+    <div id="cmp-footer" style="position: fixed; bottom: 0; left: 0; padding: 10px; background: #f8f9fa; width: 100%; text-align: center; z-index: 1000;">
+        <a href="#" id="cmp-footer-link">Zgody</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMP Framework Demo</title>
+    <script src="./src/index.js?v=__RANDOM_CACHE_BUSTER__"></script>
+    <!-- Google Publisher Tags (GPT) -->
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+        window.googletag = window.googletag || {cmd: []};
+
+        googletag.cmd.push(function() {
+            // Define ad slots - test/development slots
+            googletag.defineSlot('/6355419/Travel/Europe', [300, 250], 'ad-slot-1')
+                .addService(googletag.pubads());
+
+            // Użycie poprawnego testowego ID dla drugiego slotu
+            googletag.defineSlot('/6355419/Travel/Europe/Banner', [728, 90], 'ad-slot-2')
+                .addService(googletag.pubads());
+
+            // Wyłączamy początkowe ładowanie reklam - czekamy na zgody
+            googletag.pubads().disableInitialLoad();
+
+            // GPT automatically detects TCF-compliant CMP and uses its __tcfapi
+            // It will handle consent enforcement automatically
+
+            // Other GPT settings
+            googletag.pubads().enableSingleRequest();
+            googletag.pubads().collapseEmptyDivs();
+            googletag.enableServices();
+        });
+    </script>
+</head>
+<body>
+    <main class="container">
+        <h1>CMP Framework Demo.</h1>
+        <p>This is a demo page for the CMP Framework. The consent box should appear automatically when you first visit the site.</p>
+        <p>If you have already given consent, you can click the "Zgody" link in the footer to manage your preferences.</p>
+
+        <div class="grid">
+            <div>
+                <h2>Co to jest CMP?</h2>
+                <p>CMP (Consent Management Platform) to narzędzie, które pomaga witrynie internetowej spełnić wymogi RODO i innych przepisów dotyczących prywatności, umożliwiając użytkownikom kontrolę nad danymi osobowymi.</p>
+            </div>
+            <div>
+                <h2>IAB TCF</h2>
+                <p>IAB Europe Transparency & Consent Framework (TCF) to standard branżowy, który umożliwia witrynie internetowej, reklamodawcom i innym dostawcom technologii zgodne z przepisami przetwarzanie danych osobowych użytkowników.</p>
+            </div>
+        </div>
+                      <!-- Ad Slot 2: Leaderboard (728x90) -->
+                      <div style="margin: 10px auto; max-width: 728px;">
+                        <div id="ad-slot-2" style="width: 728px; height: 90px; margin: 0 auto; border: 1px solid #ccc; background-color: #f8f9fa;">
+                            <script>
+                                googletag.cmd.push(function() {
+                                    googletag.display('ad-slot-2');
+                                });
+                            </script>
+                        </div>
+                        <small style="display: block; margin-top: 5px; color: #666;">Reklama (728x90)</small>
+                    </div>
+
+        <article>
+            <h2>Jak działa zgoda?</h2>
+            <p>Gdy odwiedzasz witrynę po raz pierwszy, wyświetlany jest baner z prośbą o zgodę. Możesz:
+            <ul>
+                <li>Zaakceptować wszystkie zgody</li>
+                <li>Przejść do ustawień zaawansowanych i wybrać konkretne cele przetwarzania danych</li>
+                <li>Odrzucić wszystkie opcjonalne zgody</li>
+            </ul>
+            </p>
+            <p>Twoje preferencje są zapisywane w pliku cookie "eupubconsent-v2" w postaci tzw. TC String, który zawiera zaszyfrowane informacje o udzielonych przez Ciebie zgodach.</p>
+
+            <!-- Ad Slot 1: Medium Rectangle (300x250) -->
+            <div style="margin: 20px 0; text-align: center;">
+                <div id="ad-slot-1" style="width: 300px; height: 250px; margin: 0 auto; border: 1px solid #ccc; background-color: #f8f9fa;">
+                    <script>
+                        googletag.cmd.push(function() {
+                            googletag.display('ad-slot-1');
+                        });
+                    </script>
+                </div>
+                <small style="display: block; margin-top: 5px; color: #666;">Reklama (300x250)</small>
+            </div>
+        </article>
+    </main>
+    <div id="cmp-footer" style="position: fixed; bottom: 0; left: 0; padding: 10px; background: #f8f9fa; width: 100%; text-align: center; z-index: 1000;">
+        <a href="#" id="cmp-footer-link">Zgody</a>
+    </div>
+</body>
+</html>

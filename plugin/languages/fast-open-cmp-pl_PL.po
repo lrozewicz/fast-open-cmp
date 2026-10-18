@@ -1,0 +1,2362 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Fast Open CMP\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fast-open-cmp\n"
+"POT-Creation-Date: 2026-10-14T20:17:08+00:00\n"
+"Language: pl_PL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
+"|| n%100>14) ? 1 : 2);\n"
+"X-Domain: fast-open-cmp\n"
+
+#: admin/views/backup.php:7 includes/admin/trait-menu.php:219
+msgid "Backup & migration"
+msgstr "Kopia zapasowa i migracja"
+
+#: admin/views/backup.php:9
+msgid ""
+"The whole plugin in one file: companies, vendors and vendor lists, the "
+"imported IAB vendor list and translations, templates, domains (with their "
+"integration keys), reconsents and settings — optionally with the consent "
+"log. Use it as a backup or to move the CMP to another WordPress."
+msgstr "Cała wtyczka w jednym pliku: firmy, dostawcy i listy dostawców, zaimportowana lista IAB z tłumaczeniami, szablony, domeny (z kluczami integracyjnymi), ponowne zgody i ustawienia — opcjonalnie z rejestrem zgód. Do kopii zapasowej lub przeniesienia CMP na inny WordPress."
+
+#: admin/views/backup.php:16
+msgid "Backup restored."
+msgstr "Kopia przywrócona."
+
+#: admin/views/backup.php:18
+msgid "The consent log was replaced with the one from the file."
+msgstr "Rejestr zgód zastąpiono rejestrem z pliku."
+
+#: admin/views/backup.php:19
+msgid "The consent log was not changed."
+msgstr "Rejestr zgód nie został zmieniony."
+
+#: admin/views/backup.php:32
+msgid "Download a backup"
+msgstr "Pobierz kopię"
+
+#: admin/views/backup.php:38
+msgid "Include the consent log"
+msgstr "Dołącz rejestr zgód"
+
+#. translators: 1: number of entries, 2: size in the database
+#: admin/views/backup.php:41
+#, php-format
+msgid ""
+"%1$s entries, about %2$s in the database. Large logs make large files — they "
+"can also be exported separately in Consent log → Tools."
+msgstr "%1$s wpisów, ok. %2$s w bazie. Duży rejestr to duży plik — można go też wyeksportować osobno w Rejestr zgód → Narzędzia."
+
+#: admin/views/backup.php:46 admin/views/consent-log.php:70
+msgid "Compress (.gz)"
+msgstr "Kompresuj (.gz)"
+
+#: admin/views/backup.php:48
+msgid ""
+"The file contains your whole configuration and, with the consent log, "
+"pseudonymous personal data — store it securely."
+msgstr "Plik zawiera całą konfigurację, a z rejestrem zgód także pseudonimowe dane osobowe — przechowuj go bezpiecznie."
+
+#: admin/views/backup.php:49 admin/views/consent-log.php:73
+msgid "Download"
+msgstr "Pobierz"
+
+#: admin/views/backup.php:53
+msgid "Replace the current configuration with the backup?"
+msgstr "Zastąpić obecną konfigurację kopią?"
+
+#: admin/views/backup.php:54
+msgid "Restore a backup"
+msgstr "Przywróć kopię"
+
+#: admin/views/backup.php:59
+msgid ""
+"Also restore the consent log (if the file contains it) — replaces the "
+"current log"
+msgstr "Przywróć też rejestr zgód (jeśli jest w pliku) — zastępuje obecny rejestr"
+
+#: admin/views/backup.php:60
+msgid ""
+"Without it the current log stays. Its entries keep their domain IDs, so they "
+"belong to the restored domains with the same IDs."
+msgstr "Bez tej opcji obecny rejestr zostaje. Jego wpisy zachowują ID domen, więc należą do przywróconych domen o tych samych ID."
+
+#: admin/views/backup.php:63
+msgid ""
+"The configuration is replaced in one transaction: on any error nothing "
+"changes. Download a backup of the current state first."
+msgstr "Konfiguracja jest zastępowana w jednej transakcji: przy jakimkolwiek błędzie nic się nie zmienia. Najpierw pobierz kopię obecnego stanu."
+
+#: admin/views/backup.php:65
+msgid ""
+"Without the unfiltered_html capability texts are sanitised, custom CSS and "
+"the HEAD code are not restored."
+msgstr "Bez uprawnienia unfiltered_html teksty są oczyszczane, a własny CSS i kod HEAD nie są przywracane."
+
+#. translators: %s: maximum upload size
+#: admin/views/backup.php:69 admin/views/consent-log.php:85
+#, php-format
+msgid "Maximum file size: %s."
+msgstr "Maksymalny rozmiar pliku: %s."
+
+#: admin/views/backup.php:71
+msgid "I understand that the current configuration will be replaced"
+msgstr "Rozumiem, że obecna konfiguracja zostanie zastąpiona"
+
+#: admin/views/backup.php:72
+msgid "Restore"
+msgstr "Przywróć"
+
+#: admin/views/companies.php:8 admin/views/dashboard.php:10
+#: includes/admin/trait-menu.php:129 includes/admin/trait-menu.php:130
+msgid "Companies"
+msgstr "Firmy"
+
+#: admin/views/companies.php:10 admin/views/domains.php:10
+#: admin/views/templates.php:14 admin/views/vendor-lists.php:10
+#: admin/views/vendors-custom.php:10
+msgid "Add new"
+msgstr "Dodaj nową"
+
+#: admin/views/companies.php:18 admin/views/domains.php:18
+#: admin/views/templates.php:22 admin/views/vendor-lists.php:18
+#: admin/views/vendors-custom.php:18
+msgid "Saved successfully"
+msgstr "Zapisano pomyślnie"
+
+#: admin/views/companies.php:19 admin/views/domains.php:19
+#: admin/views/templates.php:23 admin/views/vendor-lists.php:19
+#: admin/views/vendors-custom.php:19
+msgid "Deleted successfully"
+msgstr "Usunięto pomyślnie"
+
+#: admin/views/companies.php:33
+msgid "Company name"
+msgstr "Nazwa firmy"
+
+#: admin/views/companies.php:40 admin/views/companies.php:58
+#: admin/views/reconsents.php:31 admin/views/reconsents.php:58
+#: admin/views/templates.php:506 admin/views/templates.php:560
+#: admin/views/templates.php:608 admin/views/templates.php:677
+#: admin/views/vendor-lists.php:45 admin/views/vendor-lists.php:224
+msgid "Description"
+msgstr "Opis"
+
+#: admin/views/companies.php:48 admin/views/domains.php:83
+#: admin/views/vendors-custom.php:57
+msgid "Save"
+msgstr "Zapisz"
+
+#: admin/views/companies.php:49 admin/views/domains.php:84
+#: admin/views/templates.php:705 admin/views/vendor-lists.php:214
+#: admin/views/vendors-custom.php:58
+msgid "Cancel"
+msgstr "Anuluj"
+
+#: admin/views/companies.php:56 admin/views/domains.php:91
+#: admin/views/reconsents.php:55 admin/views/templates.php:854
+#: admin/views/vendor-lists.php:72 admin/views/vendor-lists.php:124
+#: admin/views/vendor-lists.php:173 admin/views/vendor-lists.php:222
+#: admin/views/vendors-custom.php:65 admin/views/vendors-google.php:39
+#: admin/views/vendors-iab.php:139
+msgid "ID"
+msgstr "ID"
+
+#: admin/views/companies.php:57 admin/views/templates.php:855
+#: admin/views/vendor-lists.php:73 admin/views/vendor-lists.php:125
+#: admin/views/vendor-lists.php:174 admin/views/vendor-lists.php:223
+#: admin/views/vendors-custom.php:66 admin/views/vendors-google.php:40
+#: admin/views/vendors-iab.php:140
+msgid "Name"
+msgstr "Nazwa"
+
+#: admin/views/companies.php:59 admin/views/reconsents.php:59
+#: admin/views/templates.php:859 admin/views/vendor-lists.php:226
+msgid "Created at"
+msgstr "Data utworzenia"
+
+#: admin/views/companies.php:60 admin/views/domains.php:97
+#: admin/views/settings.php:197 admin/views/templates.php:860
+#: admin/views/vendor-lists.php:227 admin/views/vendors-custom.php:69
+#: admin/views/vendors-iab.php:75 admin/views/vendors-iab.php:214
+msgid "Actions"
+msgstr "Akcje"
+
+#: admin/views/companies.php:66
+msgid "No companies. Add the first one."
+msgstr "Brak firm. Dodaj pierwszą firmę."
+
+#: admin/views/companies.php:76 admin/views/domains.php:137
+#: admin/views/templates.php:900 admin/views/vendor-lists.php:244
+#: admin/views/vendors-custom.php:99
+msgid "Edit"
+msgstr "Edytuj"
+
+#: admin/views/companies.php:78 admin/views/domains.php:139
+#: admin/views/templates.php:903 admin/views/vendor-lists.php:247
+#: admin/views/vendors-custom.php:101 includes/admin/trait-menu.php:262
+msgid "Are you sure you want to delete?"
+msgstr "Czy na pewno chcesz usunąć?"
+
+#: admin/views/companies.php:79 admin/views/domains.php:140
+#: admin/views/templates.php:685 admin/views/templates.php:904
+#: admin/views/vendor-lists.php:248 admin/views/vendors-custom.php:102
+#: admin/views/vendors-iab.php:97 admin/views/vendors-iab.php:223
+msgid "Delete"
+msgstr "Usuń"
+
+#: admin/views/consent-log.php:5 admin/views/templates.php:150
+#: includes/admin/trait-consent-log.php:303
+msgid "Accept all"
+msgstr "Akceptuj wszystkie"
+
+#: admin/views/consent-log.php:6 admin/views/templates.php:149
+#: includes/admin/trait-consent-log.php:304
+msgid "Reject all"
+msgstr "Odrzuć wszystkie"
+
+#: admin/views/consent-log.php:7 includes/admin/trait-consent-log.php:305
+msgid "Saved choices"
+msgstr "Zapisane wybory"
+
+#: admin/views/consent-log.php:8 includes/admin/trait-consent-log.php:306
+msgid "Closed (rejected)"
+msgstr "Zamknięte (odrzucone)"
+
+#: admin/views/consent-log.php:17 admin/views/settings.php:79
+#: includes/admin/trait-menu.php:201 includes/admin/trait-menu.php:202
+msgid "Consent log"
+msgstr "Rejestr zgód"
+
+#: admin/views/consent-log.php:18
+msgid "Export CSV"
+msgstr "Eksport CSV"
+
+#: admin/views/consent-log.php:21
+msgid ""
+"One entry per decision made in the consent box — the proof of consent (GDPR "
+"Art. 7(1)). Entries are pseudonymous: the consent ID is a random value "
+"stored in the visitor's cookie and shown to them in the settings layer, IP "
+"addresses are anonymised and page URLs are stored without query strings."
+msgstr ""
+"Jeden wpis na każdą decyzję podjętą w consent boxie — dowód zgody (art. 7 "
+"ust. 1 RODO). Wpisy są pseudonimowe: identyfikator zgody to losowa wartość "
+"zapisana w cookie odwiedzającego i pokazywana mu w warstwie ustawień, adresy "
+"IP są anonimizowane, a adresy stron zapisywane bez parametrów zapytania."
+
+#: admin/views/consent-log.php:29
+msgid ""
+"Consent logging is switched off in the settings — no new entries are "
+"recorded."
+msgstr ""
+"Rejestrowanie zgód jest wyłączone w ustawieniach — nowe wpisy nie są "
+"zapisywane."
+
+#: admin/views/consent-log.php:32
+msgid "Last 30 days"
+msgstr "Ostatnie 30 dni"
+
+#: admin/views/consent-log.php:45
+msgid "Tools"
+msgstr "Narzędzia"
+
+#: admin/views/consent-log.php:48
+msgid "Export entries"
+msgstr "Eksport wpisów"
+
+#: admin/views/consent-log.php:52 admin/views/consent-log.php:136
+msgid "From"
+msgstr "Od"
+
+#: admin/views/consent-log.php:53 admin/views/consent-log.php:137
+msgid "To"
+msgstr "Do"
+
+#: admin/views/consent-log.php:56 admin/views/consent-log.php:120
+#: admin/views/consent-log.php:151 admin/views/domains.php:46
+#: admin/views/domains.php:92 admin/views/reconsents.php:13
+#: admin/views/reconsents.php:56
+msgid "Domain"
+msgstr "Domena"
+
+#: admin/views/consent-log.php:58 admin/views/consent-log.php:122
+#: admin/views/consent-log.php:130
+msgid "All"
+msgstr "Wszystkie"
+
+#: admin/views/consent-log.php:66
+msgid "CSV (spreadsheets)"
+msgstr "CSV (arkusze kalkulacyjne)"
+
+#: admin/views/consent-log.php:67
+msgid "JSON Lines (import into another installation)"
+msgstr "JSON Lines (import do innej instalacji)"
+
+#: admin/views/consent-log.php:72
+msgid ""
+"Empty dates = from the first / up to the last entry. Dates are UTC and "
+"include both days."
+msgstr ""
+"Puste daty = od pierwszego / do ostatniego wpisu. Daty w UTC, oba dni "
+"włącznie."
+
+#: admin/views/consent-log.php:77
+msgid "Import entries"
+msgstr "Import wpisów"
+
+#: admin/views/consent-log.php:82
+msgid ""
+"A file exported here or by another installation of this plugin (CSV or JSON "
+"Lines, optionally .gz). Entries are matched to domains by name — add the "
+"domains first. Entries already in the log are skipped, so the same file can "
+"be imported again safely. IP addresses are anonymised again."
+msgstr ""
+"Plik wyeksportowany tutaj lub z innej instalacji tej wtyczki (CSV lub JSON "
+"Lines, opcjonalnie .gz). Wpisy są przypisywane do domen po nazwie — najpierw "
+"dodaj domeny. Wpisy, które już są w rejestrze, zostaną pominięte, więc ten "
+"sam plik można bezpiecznie zaimportować ponownie. Adresy IP są ponownie "
+"anonimizowane."
+
+#: admin/views/consent-log.php:87
+msgid "Import"
+msgstr "Importuj"
+
+#: admin/views/consent-log.php:91
+msgid ""
+"Delete all entries recorded before the chosen date? This cannot be undone."
+msgstr ""
+"Usunąć wszystkie wpisy zarejestrowane przed wybraną datą? Tej operacji nie "
+"można cofnąć."
+
+#: admin/views/consent-log.php:92
+msgid "Delete older entries"
+msgstr "Usuń starsze wpisy"
+
+#: admin/views/consent-log.php:96
+msgid "Delete entries recorded before"
+msgstr "Usuń wpisy zarejestrowane przed"
+
+#: admin/views/consent-log.php:101
+msgid ""
+"Dates are UTC; the chosen day itself is kept. Export the entries first if "
+"you may still need them as proof of consent."
+msgstr ""
+"Daty w UTC; wybrany dzień zostaje zachowany. Jeśli wpisy mogą być jeszcze "
+"potrzebne jako dowód zgody, najpierw je wyeksportuj."
+
+#. translators: %s: date and time of the oldest entry
+#: admin/views/consent-log.php:105
+#, php-format
+msgid "Oldest entry: %s"
+msgstr "Najstarszy wpis: %s"
+
+#: admin/views/consent-log.php:108
+msgid "I understand that deleted entries cannot be restored"
+msgstr "Rozumiem, że usuniętych wpisów nie da się przywrócić"
+
+#: admin/views/consent-log.php:109
+msgid "Delete entries"
+msgstr "Usuń wpisy"
+
+#: admin/views/consent-log.php:110
+msgid ""
+"Automatic deletion (days or a fixed date) is configured in Settings → "
+"Consent log."
+msgstr ""
+"Automatyczne usuwanie (liczba dni lub stała data) ustawisz w Ustawienia → "
+"Rejestr zgód."
+
+#: admin/views/consent-log.php:117 admin/views/consent-log.php:150
+msgid "Consent ID"
+msgstr "Identyfikator zgody"
+
+#: admin/views/consent-log.php:128 admin/views/consent-log.php:152
+msgid "Decision"
+msgstr "Decyzja"
+
+#: admin/views/consent-log.php:138
+msgid "Filter"
+msgstr "Filtruj"
+
+#. translators: %s: number of entries
+#: admin/views/consent-log.php:143
+#, php-format
+msgid "%s entries"
+msgstr "Liczba wpisów: %s"
+
+#: admin/views/consent-log.php:149
+msgid "Date (UTC)"
+msgstr "Data (UTC)"
+
+#: admin/views/consent-log.php:153 admin/views/templates.php:856
+msgid "Mode"
+msgstr "Tryb"
+
+#: admin/views/consent-log.php:154
+msgid "Versions"
+msgstr "Wersje"
+
+#: admin/views/consent-log.php:155
+msgid "Page"
+msgstr "Strona"
+
+#: admin/views/consent-log.php:156
+msgid "Export"
+msgstr "Eksport"
+
+#: admin/views/consent-log.php:161
+msgid "No entries."
+msgstr "Brak wpisów."
+
+#. translators: 1: TCF policy version, 2: GVL version, 3: template id
+#: admin/views/consent-log.php:171
+#, php-format
+msgid "policy %1$s · GVL %2$s · template %3$s"
+msgstr "polityka %1$s · GVL %2$s · szablon %3$s"
+
+#: admin/views/consent-log.php:180
+msgid ""
+"All decisions of this person (JSON) — for an access or portability request"
+msgstr ""
+"Wszystkie decyzje tej osoby (JSON) — na potrzeby żądania dostępu lub "
+"przeniesienia danych"
+
+#: admin/views/consent-log.php:180
+msgid "Export consents"
+msgstr "Eksport zgód"
+
+#: admin/views/dashboard.php:5
+msgid "Fast Open CMP - Dashboard"
+msgstr "Fast Open CMP - Pulpit"
+
+#: admin/views/dashboard.php:11 admin/views/dashboard.php:17
+#: admin/views/dashboard.php:23 admin/views/dashboard.php:29
+#: admin/views/dashboard.php:35 admin/views/dashboard.php:41
+#: admin/views/dashboard.php:47
+msgid "Manage"
+msgstr "Zarządzaj"
+
+#: admin/views/dashboard.php:16 admin/views/domains.php:8
+#: includes/admin/trait-menu.php:183 includes/admin/trait-menu.php:184
+msgid "Domains"
+msgstr "Domeny"
+
+#: admin/views/dashboard.php:22 includes/admin/trait-menu.php:174
+#: includes/admin/trait-menu.php:175
+msgid "Templates"
+msgstr "Szablony"
+
+#: admin/views/dashboard.php:28 admin/views/vendor-lists.php:8
+#: includes/admin/trait-menu.php:165 includes/admin/trait-menu.php:166
+msgid "Vendor Lists"
+msgstr "Listy dostawców"
+
+#: admin/views/dashboard.php:34 admin/views/vendors-iab.php:5
+#: includes/admin/trait-menu.php:78 includes/admin/trait-menu.php:138
+#: includes/admin/trait-menu.php:139
+msgid "IAB Vendors"
+msgstr "Dostawcy IAB"
+
+#: admin/views/dashboard.php:40 includes/admin/trait-menu.php:147
+#: includes/admin/trait-menu.php:148
+msgid "Google Vendors"
+msgstr "Dostawcy Google"
+
+#: admin/views/dashboard.php:46 admin/views/vendors-custom.php:8
+#: includes/admin/trait-menu.php:156 includes/admin/trait-menu.php:157
+msgid "Custom Vendors"
+msgstr "Dostawcy własni"
+
+#: admin/views/dashboard.php:52
+msgid "Demo"
+msgstr "Demo"
+
+#: admin/views/dashboard.php:54
+msgid ""
+"One-click sample data: creates a demo company, imports the IAB Global Vendor "
+"List and Google ATP providers, adds 2 example custom vendors, creates a test "
+"template with one custom consent, and a test domain linking the company and "
+"template."
+msgstr ""
+"Przykładowe dane jednym kliknięciem: tworzy firmę demonstracyjną, importuje "
+"listę dostawców IAB (GVL) oraz dostawców Google ATP, dodaje 2 przykładowych "
+"dostawców własnych, tworzy testowy szablon z jedną zgodą niestandardową oraz "
+"testową domenę spinającą firmę i szablon."
+
+#: admin/views/dashboard.php:57
+msgid "Demo — import test data"
+msgstr "Demo — import danych testowych"
+
+#: admin/views/dashboard.php:65
+msgid ""
+"Import demo test data? This creates a company, imports vendors and creates a "
+"test template."
+msgstr ""
+"Zaimportować dane testowe? Spowoduje to utworzenie firmy, import dostawców i "
+"utworzenie testowego szablonu."
+
+#: admin/views/dashboard.php:71
+msgid "Importing… this can take a moment."
+msgstr "Importowanie… to może chwilę potrwać."
+
+#: admin/views/dashboard.php:77
+msgid "Done! Reloading…"
+msgstr "Gotowe! Przeładowuję…"
+
+#: admin/views/dashboard.php:82 admin/views/reconsents.php:112
+#: admin/views/vendors-google.php:92 admin/views/vendors-iab.php:194
+#: admin/views/vendors-iab.php:255 admin/views/vendors-iab.php:362
+msgid "Error"
+msgstr "Błąd"
+
+#: admin/views/dashboard.php:88 admin/views/vendors-iab.php:259
+#: admin/views/vendors-iab.php:273 admin/views/vendors-iab.php:366
+msgid "Connection error"
+msgstr "Błąd połączenia"
+
+#: admin/views/dashboard.php:95
+msgid "Integration"
+msgstr "Integracja"
+
+#: admin/views/dashboard.php:96
+msgid "To place the consent box on a third-party site, add the code below:"
+msgstr "Aby umieścić okno zgód na stronie zewnętrznej, dodaj poniższy kod:"
+
+#: admin/views/dashboard.php:109
+msgid ""
+"Add a domain in the Domains tab — its integration code contains the key."
+msgstr "Dodaj domenę w zakładce Domeny — jej kod integracyjny zawiera klucz."
+
+#: admin/views/dashboard.php:112
+msgid "API endpoints"
+msgstr "Endpointy API"
+
+#: admin/views/dashboard.php:114 admin/views/settings.php:16
+msgid "CMP configuration"
+msgstr "Konfiguracja CMP"
+
+#: admin/views/dashboard.php:115
+msgid "IAB vendor list (GVL)"
+msgstr "Lista dostawców IAB (GVL)"
+
+#: admin/views/dashboard.php:116
+msgid "Purposes (Polish)"
+msgstr "Cele (po polsku)"
+
+#: admin/views/domains.php:33 admin/views/domains.php:93
+msgid "Company"
+msgstr "Firma"
+
+#: admin/views/domains.php:36
+msgid "-- Select a company --"
+msgstr "-- Wybierz firmę --"
+
+#: admin/views/domains.php:51
+msgid ""
+"Host name without protocol (http/https). The consent box works on this host, "
+"www and all its subdomains; other sites embedding the code are refused (see "
+"Settings → Access)."
+msgstr ""
+"Nazwa hosta bez protokołu (http/https). Consent box działa na tym hoście, "
+"www i wszystkich jego subdomenach; inne strony osadzające kod są odrzucane "
+"(zob. Ustawienia → Dostęp)."
+
+#: admin/views/domains.php:55 admin/views/domains.php:94
+msgid "PROD template"
+msgstr "Szablon PROD"
+
+#: admin/views/domains.php:58 admin/views/domains.php:71
+msgid "-- None --"
+msgstr "-- Brak --"
+
+#: admin/views/domains.php:68 admin/views/domains.php:95
+msgid "TEST template"
+msgstr "Szablon TEST"
+
+#: admin/views/domains.php:96 admin/views/domains.php:153
+msgid "Integration code"
+msgstr "Kod integracji"
+
+#: admin/views/domains.php:103
+msgid "No domains. Add the first one."
+msgstr "Brak domen. Dodaj pierwszą domenę."
+
+#. translators: %s: date of the last forced reconsent
+#: admin/views/domains.php:119
+#, php-format
+msgid "Reconsent: %s"
+msgstr "Ponowna zgoda: %s"
+
+#: admin/views/domains.php:133 admin/views/templates.php:182
+msgid "Show"
+msgstr "Pokaż"
+
+#: admin/views/domains.php:154
+msgid "Click the field below to copy the code to the clipboard."
+msgstr "Kliknij pole poniżej, aby skopiować kod do schowka."
+
+#: admin/views/domains.php:158
+msgid "Copied to clipboard!"
+msgstr "Skopiowano do schowka!"
+
+# --- New admin strings (dashboard demo, translations delete, settings/templates help) ---
+#: admin/views/domains.php:160
+msgid "Close"
+msgstr "Zamknij"
+
+#: admin/views/reconsents.php:5 includes/admin/trait-menu.php:192
+#: includes/admin/trait-menu.php:193
+msgid "Reconsents"
+msgstr "Ponowne zgody"
+
+#: admin/views/reconsents.php:8
+msgid "Force reconsent for a domain"
+msgstr "Wymuś ponowną zgodę dla domeny"
+
+#: admin/views/reconsents.php:9
+msgid ""
+"A reconsent forces the consent box to show again for all users of the domain."
+msgstr ""
+"Ponowna zgoda wymusi ponowne wyświetlenie okna zgód dla wszystkich "
+"użytkowników danej domeny."
+
+#: admin/views/reconsents.php:16
+msgid "-- Select a domain --"
+msgstr "-- Wybierz domenę --"
+
+#: admin/views/reconsents.php:24
+msgid "Title (reason)"
+msgstr "Tytuł (powód)"
+
+#: admin/views/reconsents.php:27
+msgid "e.g. Partner list update"
+msgstr "np. Aktualizacja listy partnerów"
+
+#: admin/views/reconsents.php:34
+msgid "Optional longer description of the reconsent reason"
+msgstr "Opcjonalny dłuższy opis powodu ponownej zgody"
+
+#: admin/views/reconsents.php:41
+msgid "Force reconsent"
+msgstr "Wymuś ponowną zgodę"
+
+#: admin/views/reconsents.php:47
+msgid "Reconsent history"
+msgstr "Historia ponownych zgód"
+
+#: admin/views/reconsents.php:50
+msgid "No reconsent history."
+msgstr "Brak historii ponownych zgód."
+
+#: admin/views/reconsents.php:57 admin/views/templates.php:502
+#: admin/views/templates.php:556 admin/views/templates.php:604
+#: admin/views/templates.php:672
+msgid "Title"
+msgstr "Tytuł"
+
+#: admin/views/reconsents.php:60
+msgid "Status"
+msgstr "Status"
+
+#: admin/views/reconsents.php:71
+msgid "Active"
+msgstr "Aktywna"
+
+#: admin/views/reconsents.php:71
+msgid "Superseded"
+msgstr "Zastąpiona"
+
+#: admin/views/reconsents.php:89
+msgid "Select a domain and provide a title"
+msgstr "Wybierz domenę i podaj tytuł"
+
+#: admin/views/reconsents.php:93
+msgid ""
+"Are you sure you want to force a reconsent? All users of this domain will be "
+"asked to consent again."
+msgstr ""
+"Czy na pewno chcesz wymusić ponowną zgodę? Wszyscy użytkownicy tej domeny "
+"zostaną poproszeni o ponowną zgodę."
+
+#: admin/views/reconsents.php:109
+msgid "Reconsent created!"
+msgstr "Ponowna zgoda utworzona!"
+
+#: admin/views/settings.php:5
+msgid "Fast Open CMP settings"
+msgstr "Ustawienia Fast Open CMP"
+
+#: admin/views/settings.php:9
+msgid "Settings saved successfully"
+msgstr "Ustawienia zapisane pomyślnie"
+
+#: admin/views/settings.php:19
+msgid "CMP ID"
+msgstr "CMP ID"
+
+#: admin/views/settings.php:23
+msgid ""
+"The CMP ID IAB Europe assigned to you. Without your own ID the plugin uses "
+"28 as a development placeholder — that ID belongs to another registered CMP, "
+"so TC Strings must not be served in production with it."
+msgstr ""
+"Identyfikator CMP nadany Ci przez IAB Europe. Bez własnego ID wtyczka używa "
+"28 jako zastępczego ID deweloperskiego — to ID należy do innego "
+"zarejestrowanego CMP, więc z nim nie wolno serwować TC Stringów na produkcji."
+
+#: admin/views/settings.php:24
+msgid "IAB CMP list"
+msgstr "Lista CMP w IAB"
+
+#: admin/views/settings.php:28
+msgid "CMP version"
+msgstr "Wersja CMP"
+
+#. translators: %d: CMP version derived from the plugin version
+#: admin/views/settings.php:36
+#, php-format
+msgid ""
+"Leave empty to derive it from the plugin version (now %d) — TCF expects it "
+"to change with every release."
+msgstr ""
+"Zostaw puste, aby wyliczać ją z wersji wtyczki (teraz %d) — TCF wymaga "
+"zmiany przy każdym wydaniu."
+
+#: admin/views/settings.php:43
+msgid "Publisher country code"
+msgstr "Kod kraju wydawcy"
+
+#: admin/views/settings.php:47
+msgid "ISO 3166-1 alpha-2 (e.g. PL, DE, FR)"
+msgstr "ISO 3166-1 alpha-2 (np. PL, DE, FR)"
+
+#: admin/views/settings.php:51
+msgid "Default language"
+msgstr "Domyślny język"
+
+#: admin/views/settings.php:63
+msgid "HEAD script (frontend)"
+msgstr "Skrypt HEAD (frontend)"
+
+#: admin/views/settings.php:66
+msgid "Code in the HEAD section"
+msgstr "Kod w sekcji HEAD"
+
+#: admin/views/settings.php:70
+msgid ""
+"The code is injected high in the &lt;head&gt; section on all frontend pages "
+"(except the admin panel)."
+msgstr ""
+"Kod zostanie wstawiony wysoko w sekcji &lt;head&gt; na wszystkich stronach "
+"frontendowych (poza panelem admina)."
+
+#: admin/views/settings.php:71
+msgid ""
+"Allowed tags: &lt;script&gt;, &lt;link&gt;, &lt;meta&gt;. Use this field to "
+"add the CMP SDK script on this WordPress installation."
+msgstr ""
+"Dozwolone tagi: &lt;script&gt;, &lt;link&gt;, &lt;meta&gt;. Użyj tego pola, "
+"aby dodać skrypt SDK CMP na tej instalacji WordPress."
+
+#: admin/views/settings.php:72
+msgid "Example:"
+msgstr "Przykład:"
+
+#: admin/views/settings.php:72
+msgid "(the integration code of a domain, Domains tab)"
+msgstr "(kod integracyjny domeny, zakładka Domeny)"
+
+#: admin/views/settings.php:73
+msgid "Changing this field requires the unfiltered_html capability."
+msgstr "Zmiana tego pola wymaga uprawnienia unfiltered_html."
+
+#: admin/views/settings.php:82
+msgid "Record decisions"
+msgstr "Zapisuj decyzje"
+
+#: admin/views/settings.php:86
+msgid "Store every consent decision (proof of consent, GDPR Art. 7(1))"
+msgstr ""
+"Zapisuj każdą decyzję dotyczącą zgody (dowód zgody, art. 7 ust. 1 RODO)"
+
+#: admin/views/settings.php:91
+msgid "Keep entries for (days)"
+msgstr "Przechowuj wpisy przez (dni)"
+
+#: admin/views/settings.php:95
+msgid ""
+"Older entries are deleted daily (0 = keep forever). 1095 days = 3 years, the "
+"usual limitation period for claims."
+msgstr ""
+"Starsze wpisy są usuwane codziennie (0 = przechowuj zawsze). 1095 dni = 3 "
+"lata, typowy okres przedawnienia roszczeń."
+
+#: admin/views/settings.php:99
+msgid "Also delete entries recorded before"
+msgstr "Usuwaj też wpisy zarejestrowane przed"
+
+#: admin/views/settings.php:103
+msgid ""
+"Optional fixed date (UTC). The daily clean-up keeps deleting everything "
+"recorded before it, imported entries included. With both settings, whichever "
+"deletes more applies. Leave empty to use only the number of days."
+msgstr ""
+"Opcjonalna stała data (UTC). Codzienne czyszczenie usuwa wszystko, co "
+"zarejestrowano przed nią, także zaimportowane wpisy. Przy obu ustawieniach "
+"obowiązuje to, które usuwa więcej. Zostaw puste, aby używać tylko liczby dni."
+
+#: admin/views/settings.php:108
+msgid "Access"
+msgstr "Dostęp"
+
+#: admin/views/settings.php:111
+msgid "Origin check"
+msgstr "Kontrola pochodzenia"
+
+#: admin/views/settings.php:115
+msgid ""
+"Serve a domain's consent box and accept its consent log entries only on that "
+"domain (and its subdomains)"
+msgstr ""
+"Wyświetlaj consent box domeny i przyjmuj wpisy do jej rejestru zgód tylko na "
+"tej domenie (i jej subdomenach)"
+
+#: admin/views/settings.php:117
+msgid ""
+"Compares the page address the browser sends (Origin / Referer) with the "
+"domain name. Requests without that information are accepted. This WordPress "
+"site is always allowed; more hosts can be added with the focmp_allowed_hosts "
+"filter."
+msgstr ""
+"Porównuje adres strony przesyłany przez przeglądarkę (Origin / Referer) z "
+"nazwą domeny. Żądania bez tej informacji są przyjmowane. Ta instalacja "
+"WordPress jest zawsze dozwolona; kolejne hosty można dodać filtrem "
+"focmp_allowed_hosts."
+
+#: admin/views/settings.php:121
+msgid "Numeric domain IDs"
+msgstr "Numeryczne ID domen"
+
+#: admin/views/settings.php:125
+msgid "Accept integration codes with domain_id (older snippets)"
+msgstr "Akceptuj kody integracyjne z domain_id (starsze snippety)"
+
+#: admin/views/settings.php:127
+msgid ""
+"Integration codes now use a random key (key=…). Sequential IDs reveal how "
+"many and which sites use this CMP. Switch this off once every site uses the "
+"new code."
+msgstr ""
+"Kody integracyjne używają teraz losowego klucza (key=…). Kolejne numery ID "
+"zdradzają, ile i które serwisy korzystają z tego CMP. Wyłącz tę opcję, gdy "
+"wszystkie serwisy będą miały nowy kod."
+
+#: admin/views/settings.php:132
+msgid "Uninstall"
+msgstr "Odinstalowanie"
+
+#: admin/views/settings.php:135
+msgid "Data on deletion"
+msgstr "Dane przy usuwaniu"
+
+#: admin/views/settings.php:139
+msgid ""
+"Delete all plugin data (tables, templates, vendor lists, settings) when the "
+"plugin is deleted"
+msgstr ""
+"Usuń wszystkie dane wtyczki (tabele, szablony, listy dostawców, ustawienia) "
+"przy jej usuwaniu"
+
+#: admin/views/settings.php:141
+msgid ""
+"Off by default, so deleting and reinstalling the plugin keeps your "
+"configuration."
+msgstr ""
+"Domyślnie wyłączone — usunięcie i ponowna instalacja wtyczki zachowują "
+"konfigurację."
+
+#: admin/views/settings.php:146
+msgid "Cache"
+msgstr "Cache"
+
+#: admin/views/settings.php:149
+msgid "Cache TTL (seconds)"
+msgstr "TTL cache (sekundy)"
+
+#: admin/views/settings.php:153
+msgid "Cache lifetime for the API endpoints"
+msgstr "Czas życia cache dla endpointów API"
+
+#: admin/views/settings.php:158
+msgid "Import URLs"
+msgstr "Adresy URL do importu"
+
+#: admin/views/settings.php:161
+msgid "Automatic GVL update"
+msgstr "Automatyczna aktualizacja GVL"
+
+#: admin/views/settings.php:165
+msgid "Weekly (recommended)"
+msgstr "Co tydzień (zalecane)"
+
+#: admin/views/settings.php:166
+msgid "Daily"
+msgstr "Codziennie"
+
+#: admin/views/settings.php:167
+msgid "Off (manual import only)"
+msgstr "Wyłączona (tylko ręczny import)"
+
+#. translators: %s: date and time of the next scheduled update
+#: admin/views/settings.php:174
+#, php-format
+msgid "Next run: %s."
+msgstr "Następne uruchomienie: %s."
+
+#: admin/views/settings.php:178
+msgid ""
+"Uses WP-Cron: on low-traffic sites trigger it from a real cron job (wp-cron."
+"php) so it runs on time."
+msgstr ""
+"Korzysta z WP-Cron: na stronach o małym ruchu wywołuj wp-cron.php z "
+"prawdziwego crona, aby aktualizacja odbywała się na czas."
+
+#: admin/views/settings.php:182
+msgid "IAB GVL URL"
+msgstr "IAB GVL URL"
+
+#: admin/views/settings.php:189
+msgid "Google ATP URL"
+msgstr "Google ATP URL"
+
+#: admin/views/settings.php:201
+msgid "Clear cache"
+msgstr "Wyczyść cache"
+
+#: admin/views/settings.php:203
+msgid ""
+"Clears Fast Open CMP server-side caches (WordPress transients): the built "
+"CMP config for each domain, the IAB vendor list, and imported purpose "
+"translations. It does NOT touch visitors' cookies or saved consents. Use it "
+"after editing templates or vendor lists if changes are not visible on the "
+"frontend."
+msgstr ""
+"Czyści serwerowe bufory Fast Open CMP (transienty WordPressa): zbudowaną "
+"konfigurację CMP dla każdej domeny, listę dostawców IAB oraz zaimportowane "
+"tłumaczenia celów. NIE narusza plików cookie ani zapisanych zgód "
+"odwiedzających. Użyj po edycji szablonów lub list dostawców, jeśli zmiany "
+"nie są widoczne na froncie."
+
+#: admin/views/settings.php:206
+msgid "Clear all cache"
+msgstr "Wyczyść cały cache"
+
+#: admin/views/settings.php:208
+msgid ""
+"Removes the plugin's cached API responses (config / vendor-list / purposes). "
+"Safe — they are rebuilt on the next request."
+msgstr ""
+"Usuwa zbuforowane odpowiedzi API wtyczki (config / lista dostawców / cele). "
+"Bezpieczne — zostaną odtworzone przy następnym żądaniu."
+
+#: admin/views/settings.php:214
+msgid "Save settings"
+msgstr "Zapisz ustawienia"
+
+#: admin/views/settings.php:226
+msgid "Clearing..."
+msgstr "Czyszczenie..."
+
+#: admin/views/settings.php:234
+msgid "Cache cleared!"
+msgstr "Cache wyczyszczony!"
+
+#: admin/views/settings.php:236 admin/views/settings.php:241
+msgid "Error:"
+msgstr "Błąd:"
+
+#: admin/views/settings.php:236
+msgid "Unknown error"
+msgstr "Nieznany błąd"
+
+#: admin/views/templates.php:12
+msgid "Consent box templates"
+msgstr "Szablony okna zgód"
+
+#: admin/views/templates.php:24 admin/views/vendor-lists.php:20
+msgid "Cloned successfully"
+msgstr "Sklonowano pomyślnie"
+
+#: admin/views/templates.php:35
+msgid "Live preview"
+msgstr "Podgląd na żywo"
+
+#: admin/views/templates.php:37
+msgid ""
+"Shows this template with the current, unsaved settings. Choices made in the "
+"preview are not stored."
+msgstr ""
+"Pokazuje szablon z bieżącymi, niezapisanymi ustawieniami. Wybory dokonane w "
+"podglądzie nie są zapisywane."
+
+#: admin/views/templates.php:41 admin/views/vendors-iab.php:93
+#: admin/views/vendors-iab.php:221 admin/views/vendors-iab.php:288
+#: admin/views/vendors-iab.php:365
+msgid "Preview"
+msgstr "Podgląd"
+
+#: admin/views/templates.php:42
+msgid "Layer 1"
+msgstr "Warstwa 1"
+
+#: admin/views/templates.php:43
+msgid "Layer 2"
+msgstr "Warstwa 2"
+
+#: admin/views/templates.php:44
+msgid "Layer 3"
+msgstr "Warstwa 3"
+
+#: admin/views/templates.php:45
+msgid "Mobile"
+msgstr "Telefon"
+
+#: admin/views/templates.php:46 admin/views/vendors-iab.php:123
+msgid "Close preview"
+msgstr "Zamknij podgląd"
+
+#: admin/views/templates.php:49
+msgid "Consent box preview"
+msgstr "Podgląd okna zgód"
+
+#: admin/views/templates.php:66
+msgid "Template name"
+msgstr "Nazwa szablonu"
+
+#: admin/views/templates.php:73 admin/views/templates.php:857
+#: admin/views/vendors-iab.php:71 admin/views/vendors-iab.php:210
+msgid "Language"
+msgstr "Język"
+
+#: admin/views/templates.php:84
+msgid "Working mode"
+msgstr "Tryb pracy"
+
+#: admin/views/templates.php:87
+msgid "Full (TCF + Consent Mode)"
+msgstr "Pełny (TCF + Consent Mode)"
+
+#: admin/views/templates.php:88 admin/views/templates.php:93
+#: admin/views/templates.php:346
+msgid "Google Consent Mode v2"
+msgstr "Google Consent Mode v2"
+
+#: admin/views/templates.php:89 admin/views/templates.php:94
+#: admin/views/templates.php:877
+msgid "Basic"
+msgstr "Podstawowy"
+
+#: admin/views/templates.php:92
+msgid "Full"
+msgstr "Pełny"
+
+#: admin/views/templates.php:92
+msgid ""
+"TCF 2.3 + Google Consent Mode v2 + Additional Consent (large publishers)"
+msgstr "TCF 2.3 + Google Consent Mode v2 + Additional Consent (duże portale)"
+
+#: admin/views/templates.php:93
+msgid ""
+"Google signals only (ad_storage, analytics_storage, ...) without TCF (medium "
+"sites)"
+msgstr ""
+"Tylko sygnały Google (ad_storage, analytics_storage, ...) bez TCF (średnie "
+"strony)"
+
+#: admin/views/templates.php:94
+msgid "Custom consents only, a simple consent box (small sites)"
+msgstr "Tylko zgody niestandardowe, prosty consent box (małe strony)"
+
+#: admin/views/templates.php:99 admin/views/templates.php:858
+#: admin/views/vendors-iab.php:128
+msgid "Vendor list"
+msgstr "Lista dostawców"
+
+#: admin/views/templates.php:102
+msgid "-- Default (all enabled) --"
+msgstr "-- Domyślna (wszystkie włączone) --"
+
+#: admin/views/templates.php:110
+msgid "Edit list"
+msgstr "Edytuj listę"
+
+#: admin/views/templates.php:112
+msgid "New list"
+msgstr "Nowa lista"
+
+#: admin/views/templates.php:148
+msgid "Settings (layer 2)"
+msgstr "Ustawienia (warstwa 2)"
+
+#: admin/views/templates.php:151
+msgid "Partner list (layer 3)"
+msgstr "Lista partnerów (warstwa 3)"
+
+#: admin/views/templates.php:154
+msgid "Filled button"
+msgstr "Przycisk wypełniony"
+
+#: admin/views/templates.php:155
+msgid "Outlined button"
+msgstr "Przycisk z obramowaniem"
+
+#: admin/views/templates.php:156
+msgid "Text link"
+msgstr "Link tekstowy"
+
+#: admin/views/templates.php:159
+msgid "Layer 1: buttons and compliance"
+msgstr "Warstwa 1: przyciski i zgodność"
+
+#: admin/views/templates.php:162
+msgid "Compliance profile"
+msgstr "Profil zgodności"
+
+#: admin/views/templates.php:165
+msgid "Certified (enforced compliant layout)"
+msgstr "Certyfikacyjny (wymuszony zgodny układ)"
+
+#: admin/views/templates.php:166
+msgid "Custom (publisher decides)"
+msgstr "Własny (decyduje wydawca)"
+
+#: admin/views/templates.php:169
+msgid ""
+"The consent box always offers \"Reject all\" next to \"Accept all\" with the "
+"same visual weight, keeps the settings one click away and (in TCF mode) "
+"lists the purposes and the number of partners on layer 1. Missing buttons "
+"are added automatically."
+msgstr ""
+"Consent box zawsze pokazuje „Odrzuć wszystkie” obok „Akceptuj wszystkie” z "
+"taką samą wagą wizualną, zostawia ustawienia w zasięgu jednego kliknięcia i "
+"(w trybie TCF) wymienia cele oraz liczbę partnerów na warstwie 1. Brakujące "
+"przyciski są dodawane automatycznie."
+
+#: admin/views/templates.php:172
+msgid ""
+"The buttons are rendered exactly as configured below. Data protection "
+"authorities (EDPB, UODO, CNIL) expect refusing to be as easy as accepting — "
+"without a reject option on layer 1 the publisher takes the legal risk."
+msgstr ""
+"Przyciski są wyświetlane dokładnie tak, jak skonfigurowano poniżej. Organy "
+"ochrony danych (EDPB, UODO, CNIL) oczekują, że odmowa będzie równie łatwa "
+"jak zgoda — bez opcji odrzucenia na warstwie 1 ryzyko prawne ponosi wydawca."
+
+#: admin/views/templates.php:177
+msgid "Layer 1 buttons"
+msgstr "Przyciski warstwy 1"
+
+#: admin/views/templates.php:183
+msgid "Action"
+msgstr "Akcja"
+
+#: admin/views/templates.php:184
+msgid "Order"
+msgstr "Kolejność"
+
+#: admin/views/templates.php:185
+msgid "Style"
+msgstr "Styl"
+
+#: admin/views/templates.php:186
+msgid "Label (empty = default text)"
+msgstr "Etykieta (puste = tekst domyślny)"
+
+#: admin/views/templates.php:207
+msgid ""
+"\"Settings\" opens layer 2 (purposes), \"Partner list\" opens layer 3 "
+"(vendors, not available in Basic mode)."
+msgstr ""
+"„Ustawienia” otwierają warstwę 2 (cele), „Lista partnerów” — warstwę 3 "
+"(dostawcy, niedostępna w trybie Podstawowym)."
+
+#: admin/views/templates.php:211
+msgid "Close button (×)"
+msgstr "Przycisk zamknięcia (×)"
+
+#: admin/views/templates.php:214
+msgid "None"
+msgstr "Brak"
+
+#: admin/views/templates.php:215
+msgid "Closes and rejects (\"continue without accepting\")"
+msgstr "Zamyka i odrzuca („kontynuuj bez akceptacji”)"
+
+#: admin/views/templates.php:220
+msgid "TCF summary on layer 1"
+msgstr "Podsumowanie TCF na warstwie 1"
+
+#: admin/views/templates.php:224
+msgid ""
+"Show the number of partners and the list of purposes, stacks and special "
+"features (required by the TCF Policy; always on in the certified profile)"
+msgstr ""
+"Pokaż liczbę partnerów oraz listę celów, stacków i funkcji specjalnych "
+"(wymagane przez TCF Policy; w profilu certyfikacyjnym zawsze włączone)"
+
+#: admin/views/templates.php:230
+msgid "Appearance"
+msgstr "Wygląd"
+
+#: admin/views/templates.php:233
+msgid "Layout"
+msgstr "Układ"
+
+#: admin/views/templates.php:236
+msgid "Centered window (modal)"
+msgstr "Okno na środku (modal)"
+
+#: admin/views/templates.php:237
+msgid "Bottom bar"
+msgstr "Pasek na dole"
+
+#: admin/views/templates.php:238
+msgid "Bottom-right corner"
+msgstr "Prawy dolny róg"
+
+#: admin/views/templates.php:242
+msgid "Dim the page behind the box"
+msgstr "Przyciemnij stronę pod oknem"
+
+#: admin/views/templates.php:246
+msgid "Block page scrolling while the box is open"
+msgstr "Blokuj przewijanie strony, gdy okno jest otwarte"
+
+#: admin/views/templates.php:251
+msgid "Logo URL"
+msgstr "Adres URL logo"
+
+#: admin/views/templates.php:254
+msgid "Alternative text"
+msgstr "Tekst alternatywny"
+
+#: admin/views/templates.php:254
+msgid "Logo alternative text"
+msgstr "Tekst alternatywny logo"
+
+#: admin/views/templates.php:258
+msgid "Colors"
+msgstr "Kolory"
+
+#: admin/views/templates.php:262
+msgid "Buttons and accents"
+msgstr "Przyciski i akcenty"
+
+#: admin/views/templates.php:263
+msgid "Text on filled buttons"
+msgstr "Tekst na wypełnionych przyciskach"
+
+#: admin/views/templates.php:264
+msgid "Background"
+msgstr "Tło"
+
+#: admin/views/templates.php:265
+msgid "Text"
+msgstr "Tekst"
+
+#: admin/views/templates.php:276
+msgid "Font"
+msgstr "Czcionka"
+
+#: admin/views/templates.php:279
+msgid ""
+"\"inherit\" = the site's font, \"system\" = the operating system font, or a "
+"CSS font-family (e.g. \"Open Sans\", sans-serif). No web fonts are loaded by "
+"the consent box."
+msgstr ""
+"„inherit” = czcionka strony, „system” = czcionka systemu operacyjnego albo "
+"wartość CSS font-family (np. \"Open Sans\", sans-serif). Consent box nie "
+"ładuje żadnych fontów z sieci."
+
+#: admin/views/templates.php:283
+msgid "Corners and buttons"
+msgstr "Narożniki i przyciski"
+
+#: admin/views/templates.php:285
+msgid "Box radius (px)"
+msgstr "Zaokrąglenie okna (px)"
+
+#: admin/views/templates.php:286
+msgid "Button radius (px)"
+msgstr "Zaokrąglenie przycisków (px)"
+
+#: admin/views/templates.php:287
+msgid "Uppercase button labels"
+msgstr "Etykiety przycisków wersalikami"
+
+#: admin/views/templates.php:291 admin/views/vendors-custom.php:40
+#: admin/views/vendors-custom.php:67
+msgid "Privacy policy URL"
+msgstr "Adres URL polityki prywatności"
+
+#: admin/views/templates.php:294
+msgid "Shown as a link on layer 1."
+msgstr "Wyświetlany jako link na warstwie 1."
+
+#: admin/views/templates.php:298 admin/views/templates.php:540
+msgid "\"Privacy settings\" button"
+msgstr "Przycisk „Ustawienia prywatności”"
+
+#: admin/views/templates.php:300
+msgid "Show a floating button that reopens the settings after a decision"
+msgstr "Pokaż pływający przycisk, który po decyzji ponownie otwiera ustawienia"
+
+#: admin/views/templates.php:301
+msgid "Button position"
+msgstr "Pozycja przycisku"
+
+#: admin/views/templates.php:302
+msgid "Bottom left"
+msgstr "Lewy dolny róg"
+
+#: admin/views/templates.php:303
+msgid "Bottom right"
+msgstr "Prawy dolny róg"
+
+#: admin/views/templates.php:305
+msgid ""
+"Alternatively add a link anywhere on the site: <a href=\"#cmp-settings\">…</"
+"a> or any element with the data-cmp-open attribute."
+msgstr ""
+"Możesz też dodać link w dowolnym miejscu strony: <a href=\"#cmp-settings\">…"
+"</a> albo dowolny element z atrybutem data-cmp-open."
+
+#: admin/views/templates.php:309
+msgid "Custom CSS"
+msgstr "Własny CSS"
+
+#: admin/views/templates.php:312
+msgid ""
+"Scope rules to #open-cmp-container. Requires the unfiltered_html capability."
+msgstr ""
+"Ograniczaj reguły do #open-cmp-container. Wymaga uprawnienia unfiltered_html."
+
+#: admin/views/templates.php:317
+msgid "Consent box dimensions"
+msgstr "Wymiary okna zgód"
+
+#: admin/views/templates.php:320
+msgid "Width (px)"
+msgstr "Szerokość (px)"
+
+#: admin/views/templates.php:323
+msgid "Default: 800px"
+msgstr "Domyślnie: 800px"
+
+#: admin/views/templates.php:327
+msgid "Height (px)"
+msgstr "Wysokość (px)"
+
+#: admin/views/templates.php:330
+msgid "Default: 520px"
+msgstr "Domyślnie: 520px"
+
+#: admin/views/templates.php:335 admin/views/templates.php:338
+msgid "TCF Policy version"
+msgstr "Wersja TCF Policy"
+
+#: admin/views/templates.php:341
+msgid ""
+"Set by the plugin (TCF 2.3 = 5) and updated with plugin releases — a CMP "
+"must always write the current policy version."
+msgstr ""
+"Ustawiana przez wtyczkę (TCF 2.3 = 5) i aktualizowana z jej wydaniami — CMP "
+"musi zawsze zapisywać bieżącą wersję polityki."
+
+#: admin/views/templates.php:349
+msgid "Enable GCM v2"
+msgstr "Włącz GCM v2"
+
+#: admin/views/templates.php:356
+msgid "Send gtag consent default/update signals"
+msgstr "Wysyłaj sygnały gtag consent default/update"
+
+#: admin/views/templates.php:359
+msgid ""
+"Google Consent Mode v2 lets Google tags (Google Analytics, Google Ads, gtag."
+"js) adjust their behaviour to the user's consent. When enabled, the SDK "
+"emits gtag(\"consent\", \"default\"/\"update\", …) for the signals "
+"ad_storage, analytics_storage, ad_user_data and ad_personalization, derived "
+"from the user's choices."
+msgstr ""
+"Google Consent Mode v2 pozwala tagom Google (Google Analytics, Google Ads, "
+"gtag.js) dostosować zachowanie do zgody użytkownika. Po włączeniu SDK wysyła "
+"gtag(\"consent\", \"default\"/\"update\", …) dla sygnałów ad_storage, "
+"analytics_storage, ad_user_data i ad_personalization, na podstawie wyborów "
+"użytkownika."
+
+#: admin/views/templates.php:361
+msgid "Enable it"
+msgstr "Włącz"
+
+#: admin/views/templates.php:361
+msgid ""
+"if this site uses Google Analytics / Google Ads / gtag and you want them to "
+"respect consent (recommended for EEA/UK traffic)."
+msgstr ""
+"jeśli ta strona korzysta z Google Analytics / Google Ads / gtag i chcesz, "
+"aby respektowały zgodę (zalecane dla ruchu z EOG/UK)."
+
+#: admin/views/templates.php:362
+msgid "Leave it off"
+msgstr "Pozostaw wyłączone"
+
+#: admin/views/templates.php:362
+msgid ""
+"if the site does not use any Google tags, or another tool already manages "
+"Consent Mode."
+msgstr ""
+"jeśli strona nie używa żadnych tagów Google lub Consent Mode obsługuje już "
+"inne narzędzie."
+
+#: admin/views/templates.php:368
+msgid "IAB purpose mapping"
+msgstr "Mapowanie celów IAB"
+
+#: admin/views/templates.php:369
+msgid "Custom consent mapping"
+msgstr "Mapowanie zgód niestandardowych"
+
+#: admin/views/templates.php:373
+msgid ""
+"Without TCF the signals are driven by your custom consents: enter their "
+"numbers (e.g. 2 = custom-2, shown next to each consent below). A signal is "
+"granted when all listed consents are granted."
+msgstr ""
+"Bez TCF sygnały zależą od Twoich zgód niestandardowych: wpisz ich numery "
+"(np. 2 = custom-2, numer widać przy każdej zgodzie poniżej). Sygnał jest "
+"„granted”, gdy wszystkie wymienione zgody są udzielone."
+
+#: admin/views/templates.php:393
+msgid "ad_storage (advertising cookies)"
+msgstr "ad_storage (pliki cookie reklamowe)"
+
+#: admin/views/templates.php:394
+msgid "analytics_storage (analytics cookies)"
+msgstr "analytics_storage (pliki cookie analityczne)"
+
+#: admin/views/templates.php:395
+msgid "ad_user_data (user data for ads)"
+msgstr "ad_user_data (dane użytkownika dla reklam)"
+
+#: admin/views/templates.php:396
+msgid "ad_personalization (ad personalization)"
+msgstr "ad_personalization (personalizacja reklam)"
+
+#: admin/views/templates.php:402
+msgid "← Purposes:"
+msgstr "← Cele:"
+
+#: admin/views/templates.php:403
+msgid "← Custom consents:"
+msgstr "← Zgody niestandardowe:"
+
+#: admin/views/templates.php:413
+msgid "wait_for_update"
+msgstr "wait_for_update"
+
+#: admin/views/templates.php:417
+msgid ""
+"ms — how long to wait for the CMP before firing Google tags (default: 500)"
+msgstr ""
+"ms — czas oczekiwania na odpowiedź CMP przed odpaleniem tagów Google "
+"(domyślnie: 500)"
+
+#: admin/views/templates.php:421
+msgid "Without consent"
+msgstr "Bez zgody"
+
+#: admin/views/templates.php:425
+msgid ""
+"url_passthrough — pass ad click information in URLs when ad_storage is denied"
+msgstr ""
+"url_passthrough — przekazuj informacje o kliknięciu reklamy w adresach URL, "
+"gdy ad_storage = denied"
+
+#: admin/views/templates.php:429
+msgid ""
+"ads_data_redaction — redact ad click identifiers when ad_storage is denied"
+msgstr ""
+"ads_data_redaction — usuwaj identyfikatory kliknięć reklam, gdy ad_storage = "
+"denied"
+
+#: admin/views/templates.php:435
+msgid "Cookie settings"
+msgstr "Ustawienia plików cookie"
+
+#: admin/views/templates.php:438
+msgid "Cookie name"
+msgstr "Nazwa pliku cookie"
+
+#: admin/views/templates.php:442
+msgid "Standard TCF name: eupubconsent-v2"
+msgstr "Standardowa nazwa dla TCF: eupubconsent-v2"
+
+#: admin/views/templates.php:446
+msgid "Cookie lifetime (days)"
+msgstr "Ważność pliku cookie (dni)"
+
+#: admin/views/templates.php:453
+msgid "Ask again after (days)"
+msgstr "Zapytaj ponownie po (dniach)"
+
+#: admin/views/templates.php:457
+msgid ""
+"A stored decision older than this is collected again (0 = never). 395 days ≈ "
+"13 months, the period regulators consider reasonable. A change of the TCF "
+"Policy version always triggers a new request."
+msgstr ""
+"Zapisana decyzja starsza niż ten okres jest zbierana ponownie (0 = nigdy). "
+"395 dni ≈ 13 miesięcy — okres uznawany przez regulatorów za rozsądny. Zmiana "
+"wersji TCF Policy zawsze powoduje ponowne pytanie."
+
+#: admin/views/templates.php:461
+msgid "New partners"
+msgstr "Nowi partnerzy"
+
+#: admin/views/templates.php:465
+msgid "Ask again when IAB partners the user has not seen are added to the list"
+msgstr ""
+"Zapytaj ponownie, gdy do listy dojdą partnerzy IAB, których użytkownik nie "
+"widział"
+
+#: admin/views/templates.php:467
+msgid ""
+"New partners never get consent from an older decision, so this is optional. "
+"The GVL changes weekly — enabling it shows the box again more often."
+msgstr ""
+"Nowi partnerzy nigdy nie dostają zgody ze starszej decyzji, więc to opcja. "
+"GVL zmienia się co tydzień — po włączeniu okno będzie pokazywane częściej."
+
+#: admin/views/templates.php:472
+msgid "IAB stacks"
+msgstr "Stacki IAB"
+
+#: admin/views/templates.php:475
+msgid "Enabled stacks"
+msgstr "Włączone stacki"
+
+#: admin/views/templates.php:484
+msgid ""
+"Stack IDs separated by commas. A stack groups IAB purposes into one checkbox."
+msgstr ""
+"ID stacków oddzielone przecinkami. Stack grupuje cele IAB w jeden checkbox."
+
+#: admin/views/templates.php:485
+msgid ""
+"Default: 42 (purposes 2-10: personalised ads, content, measurement, "
+"audiences, service improvement)"
+msgstr ""
+"Domyślnie: 42 (cele 2-10: reklamy spersonalizowane, treści, pomiary, "
+"odbiorcy, ulepszanie usług)"
+
+#. translators: %s: link to the IAB Europe TCF policies page
+#: admin/views/templates.php:489
+#, php-format
+msgid "More information about stacks can be found in the %s."
+msgstr "Więcej informacji o stackach znajdziesz w %s."
+
+#: admin/views/templates.php:491
+msgid "IAB Europe TCF policies"
+msgstr "politykach TCF IAB Europe"
+
+#: admin/views/templates.php:499
+msgid "Texts - Layer 1 (Banner)"
+msgstr "Teksty - Warstwa 1 (Baner)"
+
+#: admin/views/templates.php:522
+msgid "Partner link text"
+msgstr "Tekst linku partnerów"
+
+#: admin/views/templates.php:526
+msgid "Settings button"
+msgstr "Przycisk ustawień"
+
+#: admin/views/templates.php:530 admin/views/templates.php:596
+#: admin/views/templates.php:624
+msgid "Accept button"
+msgstr "Przycisk akceptacji"
+
+#: admin/views/templates.php:535 admin/views/templates.php:592
+#: admin/views/templates.php:620
+msgid "Reject button"
+msgstr "Przycisk odrzucenia"
+
+#: admin/views/templates.php:536
+msgid "Close button (× label for screen readers)"
+msgstr "Przycisk zamknięcia (etykieta × dla czytników ekranu)"
+
+#: admin/views/templates.php:537
+msgid "Privacy policy link"
+msgstr "Link do polityki prywatności"
+
+#: admin/views/templates.php:538
+msgid "Partner count sentence"
+msgstr "Zdanie z liczbą partnerów"
+
+#: admin/views/templates.php:538
+msgid "Placeholders: {iab} and {other}"
+msgstr "Znaczniki: {iab} i {other}"
+
+#: admin/views/templates.php:539
+msgid "Purposes intro"
+msgstr "Wstęp do listy celów"
+
+#: admin/views/templates.php:546
+msgid "Default text"
+msgstr "Tekst domyślny"
+
+#: admin/views/templates.php:553
+msgid "Texts - Layer 2 (Settings)"
+msgstr "Teksty - Warstwa 2 (Ustawienia)"
+
+#: admin/views/templates.php:576
+msgid "Partner link"
+msgstr "Link partnerów"
+
+#: admin/views/templates.php:580 admin/views/templates.php:612
+msgid "Back button"
+msgstr "Przycisk wstecz"
+
+#: admin/views/templates.php:584
+msgid "Preferences title"
+msgstr "Tytuł preferencji"
+
+#: admin/views/templates.php:588 admin/views/templates.php:616
+msgid "Confirm button"
+msgstr "Przycisk potwierdzenia"
+
+#: admin/views/templates.php:601
+msgid "Texts - Layer 3 (Partners)"
+msgstr "Teksty - Warstwa 3 (Partnerzy)"
+
+#: admin/views/templates.php:628
+msgid "Privacy policy"
+msgstr "Polityka prywatności"
+
+#: admin/views/templates.php:632
+msgid "Legitimate interest"
+msgstr "Uzasadniony interes"
+
+#: admin/views/templates.php:636
+msgid "Object button"
+msgstr "Przycisk sprzeciwu"
+
+#: admin/views/templates.php:640
+msgid "Always active"
+msgstr "Zawsze aktywne"
+
+#: admin/views/templates.php:644
+msgid "Group: IAB"
+msgstr "Grupa: IAB"
+
+#: admin/views/templates.php:648
+msgid "Group: Google"
+msgstr "Grupa: Google"
+
+#: admin/views/templates.php:652
+msgid "Group: Other"
+msgstr "Grupa: Inni"
+
+#: admin/views/templates.php:657
+msgid "Custom Consents"
+msgstr "Zgody niestandardowe (Custom Consents)"
+
+#: admin/views/templates.php:659
+msgid ""
+"To run a script or embed only after a consent, mark it on your site with its "
+"number, e.g."
+msgstr ""
+"Aby skrypt lub osadzony element działał dopiero po zgodzie, oznacz go na "
+"stronie numerem zgody, np."
+
+#: admin/views/templates.php:661
+msgid "or"
+msgstr "albo"
+
+#: admin/views/templates.php:683
+msgid "Legitimate interest allowed"
+msgstr "Dozwolony uzasadniony interes"
+
+#: admin/views/templates.php:700
+msgid "Add custom consent"
+msgstr "Dodaj zgodę niestandardową"
+
+#: admin/views/templates.php:704
+msgid "Save template"
+msgstr "Zapisz szablon"
+
+#: admin/views/templates.php:761
+msgid ""
+"Sample article — this is how the consent box appears on top of your page."
+msgstr "Przykładowy artykuł — tak okno zgód wygląda na Twojej stronie."
+
+#: admin/views/templates.php:866
+msgid "No templates. Add the first one."
+msgstr "Brak szablonów. Dodaj pierwszy szablon."
+
+#: admin/views/templates.php:875
+msgid "Full (TCF+GCM)"
+msgstr "Pełny (TCF+GCM)"
+
+#: admin/views/templates.php:876
+msgid "Consent Mode v2"
+msgstr "Consent Mode v2"
+
+#: admin/views/templates.php:895
+msgid "Default"
+msgstr "Domyślna"
+
+#: admin/views/templates.php:901 admin/views/vendor-lists.php:245
+msgid "Clone"
+msgstr "Klonuj"
+
+#: admin/views/vendor-lists.php:38
+msgid "List name"
+msgstr "Nazwa listy"
+
+#: admin/views/vendor-lists.php:53
+msgid "Vendors in list"
+msgstr "Dostawcy na liście"
+
+#: admin/views/vendor-lists.php:56
+msgid "IAB"
+msgstr "IAB"
+
+#: admin/views/vendor-lists.php:57
+msgid "Google"
+msgstr "Google"
+
+#: admin/views/vendor-lists.php:58
+msgid "Custom"
+msgstr "Niestandardowy"
+
+#: admin/views/vendor-lists.php:64 admin/views/vendor-lists.php:116
+#: admin/views/vendor-lists.php:165
+msgid "Search vendors..."
+msgstr "Szukaj dostawcy..."
+
+#: admin/views/vendor-lists.php:65 admin/views/vendor-lists.php:117
+#: admin/views/vendor-lists.php:166
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+#: admin/views/vendor-lists.php:66 admin/views/vendor-lists.php:118
+#: admin/views/vendor-lists.php:167
+msgid "Deselect all"
+msgstr "Odznacz wszystko"
+
+#: admin/views/vendor-lists.php:74 admin/views/vendor-lists.php:126
+#: admin/views/vendor-lists.php:175
+msgid "Global"
+msgstr "Globalnie"
+
+#: admin/views/vendor-lists.php:75 admin/views/vendor-lists.php:127
+#: admin/views/vendor-lists.php:176
+msgid "List"
+msgstr "Lista"
+
+#: admin/views/vendor-lists.php:92 admin/views/vendor-lists.php:141
+#: admin/views/vendor-lists.php:190
+msgid "ON"
+msgstr "WŁ."
+
+#: admin/views/vendor-lists.php:94 admin/views/vendor-lists.php:143
+#: admin/views/vendor-lists.php:192
+msgid "OFF"
+msgstr "WYŁ."
+
+#: admin/views/vendor-lists.php:213
+msgid "Save list"
+msgstr "Zapisz listę"
+
+#: admin/views/vendor-lists.php:225
+msgid "Used by templates"
+msgstr "Używana przez szablony"
+
+#: admin/views/vendor-lists.php:233
+msgid "No vendor lists. Add the first one."
+msgstr "Brak list dostawców. Dodaj pierwszą listę."
+
+#: admin/views/vendors-custom.php:33
+msgid "Vendor name"
+msgstr "Nazwa dostawcy"
+
+#: admin/views/vendors-custom.php:47
+msgid "Category"
+msgstr "Kategoria"
+
+#: admin/views/vendors-custom.php:50
+msgid "Other"
+msgstr "Inny"
+
+#: admin/views/vendors-custom.php:68 admin/views/vendors-google.php:41
+#: admin/views/vendors-iab.php:141
+msgid "Enabled"
+msgstr "Włączony"
+
+#: admin/views/vendors-custom.php:75
+msgid "No custom vendors. Add the first one."
+msgstr "Brak dostawców własnych. Dodaj pierwszego."
+
+#: admin/views/vendors-google.php:5
+msgid "Google Vendors (Additional Consent)"
+msgstr "Dostawcy Google (Additional Consent)"
+
+#: admin/views/vendors-google.php:9 admin/views/vendors-iab.php:9
+msgid "Updated successfully"
+msgstr "Zaktualizowano pomyślnie"
+
+#: admin/views/vendors-google.php:14
+msgid "Import from the Google ATP CSV"
+msgstr "Import z Google ATP CSV"
+
+#: admin/views/vendors-google.php:15
+msgid "Import the Google provider list from the official URL."
+msgstr "Zaimportuj listę providerów Google z oficjalnego adresu URL."
+
+#: admin/views/vendors-google.php:18 admin/views/vendors-iab.php:18
+msgid "Import URL:"
+msgstr "Adres URL do importu:"
+
+#: admin/views/vendors-google.php:25
+msgid "Import Google ATP"
+msgstr "Importuj Google ATP"
+
+#: admin/views/vendors-google.php:31
+msgid "Provider list"
+msgstr "Lista providerów"
+
+#: admin/views/vendors-google.php:34
+msgid "No providers. Import from Google ATP."
+msgstr "Brak providerów. Wykonaj import z Google ATP."
+
+#: admin/views/vendors-google.php:42 admin/views/vendors-iab.php:74
+#: admin/views/vendors-iab.php:142 admin/views/vendors-iab.php:213
+msgid "Updated at"
+msgstr "Data aktualizacji"
+
+#: admin/views/vendors-google.php:79 admin/views/vendors-iab.php:180
+#: includes/admin/trait-menu.php:263
+msgid "Importing..."
+msgstr "Importowanie..."
+
+#: admin/views/vendors-google.php:89
+msgid "Imported providers:"
+msgstr "Zaimportowani dostawcy:"
+
+#: admin/views/vendors-iab.php:14
+msgid "Import from the IAB Global Vendor List"
+msgstr "Import z IAB Global Vendor List"
+
+#: admin/views/vendors-iab.php:15
+msgid "Import the vendor list from the official IAB URL or a local file."
+msgstr ""
+"Zaimportuj listę dostawców z oficjalnego adresu URL IAB lub z lokalnego "
+"pliku."
+
+#: admin/views/vendors-iab.php:25
+msgid "Import IAB GVL"
+msgstr "Importuj IAB GVL"
+
+#: admin/views/vendors-iab.php:30
+msgid "Import purpose translations"
+msgstr "Import tłumaczeń celów"
+
+#: admin/views/vendors-iab.php:33
+msgid "Polish"
+msgstr "Polski"
+
+#: admin/views/vendors-iab.php:34
+msgid "German"
+msgstr "Niemiecki"
+
+#: admin/views/vendors-iab.php:35
+msgid "French"
+msgstr "Francuski"
+
+#: admin/views/vendors-iab.php:36
+msgid "Spanish"
+msgstr "Hiszpański"
+
+#: admin/views/vendors-iab.php:37
+msgid "Italian"
+msgstr "Włoski"
+
+#: admin/views/vendors-iab.php:40
+msgid "Import translations"
+msgstr "Importuj tłumaczenia"
+
+#: admin/views/vendors-iab.php:48
+msgid "Imported translations"
+msgstr "Zaimportowane tłumaczenia"
+
+#: admin/views/vendors-iab.php:52 admin/views/vendors-iab.php:206
+msgid ""
+"No imported translations. Use the form above to import purpose translations."
+msgstr ""
+"Brak zaimportowanych tłumaczeń. Użyj powyższego formularza, aby zaimportować "
+"tłumaczenia celów."
+
+#: admin/views/vendors-iab.php:72 admin/views/vendors-iab.php:211
+msgid "IAB purposes"
+msgstr "Cele IAB"
+
+#: admin/views/vendors-iab.php:73 admin/views/vendors-iab.php:212
+msgid "GVL metadata"
+msgstr "Metadane GVL"
+
+#: admin/views/vendors-iab.php:109
+msgid "Translation preview"
+msgstr "Podgląd tłumaczeń"
+
+#: admin/views/vendors-iab.php:116
+msgid "Translation"
+msgstr "Tłumaczenie"
+
+#: admin/views/vendors-iab.php:131
+msgid "No vendors. Import from the IAB GVL."
+msgstr "Brak dostawców. Wykonaj import z IAB GVL."
+
+#: admin/views/vendors-iab.php:191
+msgid "Imported vendors / purposes:"
+msgstr "Zaimportowani dostawcy / cele:"
+
+#: admin/views/vendors-iab.php:240
+msgid "Importing translations…"
+msgstr "Importowanie tłumaczeń…"
+
+#: admin/views/vendors-iab.php:251
+msgid "Imported"
+msgstr "Zaimportowano"
+
+#: admin/views/vendors-iab.php:251
+msgid "purposes"
+msgstr "celów"
+
+#: admin/views/vendors-iab.php:266
+msgid "Delete the imported translation for"
+msgstr "Usunąć zaimportowane tłumaczenie dla"
+
+#: admin/views/vendors-iab.php:281
+msgid "Loading..."
+msgstr "Ładowanie..."
+
+#: admin/views/vendors-iab.php:297
+msgid "Special Purposes"
+msgstr "Cele specjalne (Special Purposes)"
+
+#: admin/views/vendors-iab.php:298
+msgid "Features"
+msgstr "Funkcje (Features)"
+
+#: admin/views/vendors-iab.php:299
+msgid "Special Features"
+msgstr "Funkcje specjalne (Special Features)"
+
+#: admin/views/vendors-iab.php:300
+msgid "Stacks"
+msgstr "Stacki (Stacks)"
+
+#: admin/views/vendors-iab.php:301
+msgid "Data Categories"
+msgstr "Kategorie danych (Data Categories)"
+
+#: admin/views/vendors-iab.php:311
+msgid "Illustrations:"
+msgstr "Ilustracje:"
+
+#: admin/views/vendors-iab.php:340
+msgid "Purposes"
+msgstr "Cele (Purposes)"
+
+#: admin/views/vendors-iab.php:355
+msgid "No data"
+msgstr "Brak danych"
+
+#: includes/admin/trait-backup.php:33
+msgid "You are not allowed to download a backup."
+msgstr "Nie masz uprawnień do pobrania kopii."
+
+#: includes/admin/trait-backup.php:39
+msgid "You are not allowed to restore a backup."
+msgstr "Nie masz uprawnień do przywrócenia kopii."
+
+#: includes/admin/trait-backup.php:51
+msgid "Confirm that the current configuration will be replaced."
+msgstr "Potwierdź, że obecna konfiguracja zostanie zastąpiona."
+
+#. translators: %s: maximum upload size
+#: includes/admin/trait-backup.php:56
+#, php-format
+msgid "The file is larger than the server accepts (%s)."
+msgstr "Plik jest większy, niż przyjmuje serwer (%s)."
+
+#: includes/admin/trait-backup.php:57 includes/admin/trait-consent-log.php:209
+msgid "No file was uploaded."
+msgstr "Nie przesłano pliku."
+
+#: includes/admin/trait-consent-log.php:135
+msgid "You are not allowed to change the consent log."
+msgstr "Nie masz uprawnień do zmiany rejestru zgód."
+
+#. translators: 1: number of entries, 2: date
+#: includes/admin/trait-consent-log.php:197
+#, php-format
+msgid "Deleted %1$s entries recorded before %2$s."
+msgstr "Usunięto %1$s wpisów zarejestrowanych przed %2$s."
+
+#. translators: 1: number of entries, 2: date
+#: includes/admin/trait-consent-log.php:200
+#, php-format
+msgid ""
+"Deleted %1$s entries recorded before %2$s so far; the rest is being deleted "
+"in the background (WP-Cron)."
+msgstr ""
+"Usunięto dotąd %1$s wpisów zarejestrowanych przed %2$s; reszta jest usuwana "
+"w tle (WP-Cron)."
+
+#: includes/admin/trait-consent-log.php:202
+msgid "Choose a date and confirm the deletion."
+msgstr "Wybierz datę i potwierdź usunięcie."
+
+#. translators: %s: maximum upload size
+#: includes/admin/trait-consent-log.php:207
+#, php-format
+msgid ""
+"The file is larger than the server accepts (%s). Compress it (.gz) or split "
+"it."
+msgstr ""
+"Plik jest większy, niż przyjmuje serwer (%s). Skompresuj go (.gz) lub "
+"podziel."
+
+#. translators: 1: imported entries, 2: already present, 3: invalid, 4: unknown domain
+#: includes/admin/trait-consent-log.php:216
+#, php-format
+msgid ""
+"Import finished: %1$s entries imported, %2$s already present, %3$s invalid, "
+"%4$s for domains not configured here."
+msgstr ""
+"Import zakończony: zaimportowano %1$s wpisów, %2$s już istniało, %3$s "
+"błędnych, %4$s dla domen nieskonfigurowanych w tej instalacji."
+
+#. translators: %s: list of domain names
+#: includes/admin/trait-consent-log.php:220
+#, php-format
+msgid "Add these domains first and import the file again: %s."
+msgstr "Dodaj najpierw te domeny i zaimportuj plik ponownie: %s."
+
+#. translators: %s: number of entries
+#: includes/admin/trait-consent-log.php:224
+#, php-format
+msgid ""
+"%s imported entries are older than the retention period and will be deleted "
+"by the next daily clean-up."
+msgstr ""
+"%s zaimportowanych wpisów jest starszych niż okres przechowywania i zostanie "
+"usuniętych przy najbliższym codziennym czyszczeniu."
+
+#: includes/admin/trait-consent-log.php:243
+#: includes/admin/trait-consent-log.php:269
+msgid "You are not allowed to export the consent log."
+msgstr "Nie masz uprawnień do eksportu rejestru zgód."
+
+#: includes/admin/trait-consent-log.php:273
+msgid "Invalid consent ID."
+msgstr "Nieprawidłowy identyfikator zgody."
+
+#: includes/admin/trait-consent-log.php:376
+msgid ""
+"All consent decisions recorded for this consent ID, oldest first. \"tcf\" "
+"lists what the TC String (IAB Transparency & Consent Framework) contains; "
+"names come from the current vendor list."
+msgstr ""
+"Wszystkie decyzje dotyczące zgód zapisane dla tego identyfikatora zgody, od "
+"najstarszej. „tcf” pokazuje zawartość TC Stringa (IAB Transparency & Consent "
+"Framework); nazwy pochodzą z aktualnej listy dostawców."
+
+#: includes/admin/trait-entities.php:23
+msgid "Company name is required"
+msgstr "Nazwa firmy jest wymagana"
+
+#. translators: %d: number of further items not listed
+#: includes/admin/trait-entities.php:69
+#, php-format
+msgid "and %d more"
+msgid_plural "and %d more"
+msgstr[0] "i jeszcze %d"
+msgstr[1] "i jeszcze %d"
+msgstr[2] "i jeszcze %d"
+
+#. translators: %s: comma-separated domain names
+#: includes/admin/trait-entities.php:91
+#, php-format
+msgid ""
+"Cannot delete this company — it is still used by domain(s): %s. Reassign or "
+"delete those domains first."
+msgstr ""
+"Nie można usunąć tej firmy — jest nadal używana przez domenę(-y): %s. "
+"Najpierw zmień przypisanie lub usuń te domeny."
+
+#: includes/admin/trait-entities.php:116
+msgid "Domain and company are required"
+msgstr "Domena i firma są wymagane"
+
+#. translators: %s: comma-separated domain names
+#: includes/admin/trait-entities.php:307
+#, php-format
+msgid ""
+"Cannot delete this template — it is still used by domain(s): %s. Change or "
+"delete those domains first."
+msgstr ""
+"Nie można usunąć tego szablonu — jest nadal używany przez domenę(-y): %s. "
+"Najpierw zmień lub usuń te domeny."
+
+#. translators: %s: name of the cloned item
+#: includes/admin/trait-entities.php:337 includes/admin/trait-entities.php:617
+#, php-format
+msgid "%s (copy)"
+msgstr "%s (kopia)"
+
+#: includes/admin/trait-entities.php:411
+msgid "List name is required"
+msgstr "Nazwa listy jest wymagana"
+
+#. translators: %s: comma-separated template names
+#: includes/admin/trait-entities.php:582
+#, php-format
+msgid ""
+"Cannot delete this vendor list — it is still used by template(s): %s. Change "
+"or delete those templates first."
+msgstr ""
+"Nie można usunąć tej listy dostawców — jest nadal używana przez szablon(y): "
+"%s. Najpierw zmień lub usuń te szablony."
+
+#: includes/admin/trait-menu.php:75
+msgid "The vendor list (GVL) may be out of date."
+msgstr "Lista dostawców (GVL) może być nieaktualna."
+
+#: includes/admin/trait-menu.php:92
+msgid "No own CMP ID configured."
+msgstr "Nie ustawiono własnego CMP ID."
+
+#: includes/admin/trait-menu.php:93
+msgid ""
+"TC Strings currently carry the development placeholder 28, which belongs to "
+"another registered CMP. Register with IAB Europe and enter your CMP ID "
+"before serving the full TCF mode in production."
+msgstr ""
+"TC Stringi zawierają teraz zastępcze ID deweloperskie 28, które należy do "
+"innego zarejestrowanego CMP. Zarejestruj się w IAB Europe i wpisz swój CMP "
+"ID, zanim uruchomisz pełny tryb TCF na produkcji."
+
+#: includes/admin/trait-menu.php:95 includes/admin/trait-menu.php:210
+#: includes/admin/trait-menu.php:211
+msgid "Settings"
+msgstr "Ustawienia"
+
+#: includes/admin/trait-menu.php:105 includes/admin/trait-menu.php:106
+msgid "Fast Open CMP"
+msgstr "Fast Open CMP"
+
+#: includes/admin/trait-menu.php:120 includes/admin/trait-menu.php:121
+msgid "Dashboard"
+msgstr "Pulpit"
+
+#: includes/admin/trait-menu.php:220
+msgid "Backup"
+msgstr "Kopia zapasowa"
+
+#: includes/admin/trait-menu.php:264
+msgid "Import completed successfully"
+msgstr "Import zakończony pomyślnie"
+
+#: includes/admin/trait-menu.php:265
+msgid "Import error"
+msgstr "Błąd importu"
+
+#. translators: 1: number of enabled vendors, 2: total number of vendors
+#: includes/admin/trait-menu.php:267
+#, php-format
+msgid "%1$s / %2$s enabled"
+msgstr "%1$s / %2$s włączonych"
+
+#: includes/admin/trait-menu.php:268
+msgid "The change could not be saved. Please reload the page and try again."
+msgstr "Nie udało się zapisać zmiany. Odśwież stronę i spróbuj ponownie."
+
+#: includes/admin/trait-settings-ajax.php:203
+#: includes/admin/trait-settings-ajax.php:330
+#: includes/admin/trait-settings-ajax.php:387
+#: includes/admin/trait-settings-ajax.php:431
+#: includes/admin/trait-settings-ajax.php:458
+#: includes/admin/trait-settings-ajax.php:513
+#: includes/admin/trait-settings-ajax.php:529
+#: includes/admin/trait-settings-ajax.php:705
+#: includes/admin/trait-settings-ajax.php:716
+#: includes/admin/trait-settings-ajax.php:813
+msgid "Insufficient permissions"
+msgstr "Brak uprawnień"
+
+#: includes/admin/trait-settings-ajax.php:346
+msgid "Unknown vendor type"
+msgstr "Nieznany typ dostawcy"
+
+#: includes/admin/trait-settings-ajax.php:360
+msgid "Database write error"
+msgstr "Błąd zapisu do bazy"
+
+#: includes/admin/trait-settings-ajax.php:468
+msgid "Domain and title are required"
+msgstr "Domena i tytuł są wymagane"
+
+#: includes/admin/trait-settings-ajax.php:519
+msgid "Cache cleared"
+msgstr "Cache wyczyszczony"
+
+#: includes/admin/trait-settings-ajax.php:536
+msgid "Missing lang parameter"
+msgstr "Brak parametru lang"
+
+#: includes/admin/trait-settings-ajax.php:722
+msgid "Missing language"
+msgstr "Brak języka"
+
+#: includes/admin/trait-settings-ajax.php:725
+msgid "The English (base) translation cannot be deleted."
+msgstr "Tłumaczenia angielskiego (bazowego) nie można usunąć."
+
+#: includes/admin/trait-settings-ajax.php:908
+msgid "Demo data imported."
+msgstr "Zaimportowano dane demonstracyjne."
+
+#. translators: 1: IAB vendor count, 2: Google provider count
+#: includes/admin/trait-settings-ajax.php:911
+#, php-format
+msgid ""
+"(%1$d IAB vendors, %2$d Google providers, 2 custom vendors, 1 template, 1 "
+"domain)"
+msgstr ""
+"(%1$d dostawców IAB, %2$d dostawców Google, 2 dostawców własnych, 1 szablon, "
+"1 domena)"
+
+#: includes/class-backup.php:158
+msgid "The file cannot be read."
+msgstr "Nie można odczytać pliku."
+
+#: includes/class-backup.php:168 includes/class-backup.php:179
+msgid "This is not a Fast Open CMP backup file."
+msgstr "To nie jest plik kopii zapasowej Fast Open CMP."
+
+#. translators: %s: plugin version that created the backup
+#: includes/class-backup.php:183
+#, php-format
+msgid ""
+"The backup comes from a newer plugin version (%s). Update the plugin first."
+msgstr "Kopia pochodzi z nowszej wersji wtyczki (%s). Najpierw zaktualizuj wtyczkę."
+
+#: includes/class-backup.php:186
+msgid ""
+"The backup file is incomplete (no end marker) — the download or upload was "
+"cut off."
+msgstr "Plik kopii jest niekompletny (brak znacznika końca) — pobieranie lub przesyłanie zostało przerwane."
+
+#: includes/class-backup.php:230
+msgid "The backup file contains an unreadable line."
+msgstr "Plik kopii zawiera nieczytelny wiersz."
+
+#. translators: %s: database or file error
+#: includes/class-backup.php:319
+#, php-format
+msgid "Restore failed and was rolled back: %s"
+msgstr "Przywracanie nie powiodło się i zostało wycofane: %s"
+
+#: includes/class-importer.php:306
+msgid "The source must be an http(s) URL."
+msgstr "Źródło musi być adresem URL http(s)."
+
+#. translators: %d: HTTP status code
+#: includes/class-importer.php:320
+#, php-format
+msgid "The source responded with HTTP %d."
+msgstr "Źródło odpowiedziało kodem HTTP %d."
+
+#: includes/class-scheduler.php:239
+msgid "No GVL update has been recorded yet."
+msgstr "Nie zarejestrowano jeszcze żadnej aktualizacji GVL."
+
+#. translators: 1: date and time, 2: error message
+#: includes/class-scheduler.php:244
+#, php-format
+msgid "Last GVL update failed on %1$s: %2$s"
+msgstr "Ostatnia aktualizacja GVL nie powiodła się %1$s: %2$s"
+
+#: includes/class-scheduler.php:248
+#, php-format
+msgid ""
+"Last GVL update: %1$s — %2$d vendors, %3$d switched off (deleted or no "
+"longer listed)."
+msgstr ""
+"Ostatnia aktualizacja GVL: %1$s — dostawców: %2$d, wyłączonych: %3$d "
+"(usuniętych lub nieobecnych na liście)."
+
+#~ msgid "Replace ID with the domain ID from the Domains tab."
+#~ msgstr "Zastąp ID identyfikatorem domeny z zakładki Domeny."
+
+#~ msgid "Without protocol (http/https)"
+#~ msgstr "Bez protokołu (http/https)"
+
+#~ msgid "Timestamp"
+#~ msgstr "Znacznik czasu"
+
+#~ msgid "TCF 2.3 = 5"
+#~ msgstr "TCF 2.3 = 5"
+
+#~ msgid "CMP ID registered with the IAB"
+#~ msgstr "ID CMP zarejestrowane w IAB"
+
+#~ msgid "Go to templates"
+#~ msgstr "Przejdź do szablonów"
+
+#~ msgid "New domain"
+#~ msgstr "Nowa domena"
+
+#~ msgid "New template"
+#~ msgstr "Nowy szablon"
+
+#~ msgid "CMP working mode"
+#~ msgstr "Tryb pracy CMP"
+
+#~ msgid ""
+#~ "TCF Policy, GCM, Cookie and Stacks settings have moved into the template "
+#~ "configuration."
+#~ msgstr ""
+#~ "Ustawienia TCF Policy, GCM, plików cookie i stacków zostały przeniesione "
+#~ "do konfiguracji szablonów."
+
+#~ msgid "Quick actions"
+#~ msgstr "Szybkie akcje"
+
+#~ msgid "Translations imported"
+#~ msgstr "Zaimportowano tłumaczenia"
+
+#~ msgid ""
+#~ "Consent Management Platform (CMP) compliant with IAB TCF 2.3 and Google "
+#~ "Additional Consent"
+#~ msgstr ""
+#~ "Platforma zarządzania zgodami (CMP) zgodna z IAB TCF 2.3 i Google "
+#~ "Additional Consent"

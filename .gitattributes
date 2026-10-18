@@ -1,0 +1,28 @@
+# Normalize line endings: LF in the repo, auto on checkout. Stops the
+# LF -> CRLF warnings on Windows and keeps diffs clean across platforms.
+* text=auto eol=lf
+
+# Explicit text types (built artifacts + sources).
+*.ts   text eol=lf
+*.js   text eol=lf
+*.php  text eol=lf
+*.json text eol=lf
+*.scss text eol=lf
+*.css  text eol=lf
+*.md   text eol=lf
+*.yml  text eol=lf
+*.html text eol=lf
+*.sql  text eol=lf
+
+# Gettext: .mo is binary; .po/.pot are LF text.
+*.mo  binary
+*.po  text eol=lf
+*.pot text eol=lf
+
+# Binaries — never normalize.
+*.phar binary
+*.png  binary
+*.jpg  binary
+*.gif  binary
+*.woff binary
+*.woff2 binary

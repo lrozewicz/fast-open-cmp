@@ -1,0 +1,31 @@
+{
+  "name": "fast-open-cmp",
+  "version": "1.2.0",
+  "description": "Consent Management Platform (CMP) compliant with IAB TCF 2.3, Google Consent Mode v2 and Additional Consent — WordPress plugin. Three working modes: full (TCF + Consent Mode), Google Consent Mode v2 only, and basic.",
+  "private": true,
+  "scripts": {
+    "build": "cd sdk && npm run build && cp dist/src/index.js ../plugin/assets/js/cmp-sdk.js",
+    "dev": "cd sdk && npm run dev",
+    "typecheck": "cd sdk && npm run typecheck",
+    "lint": "cd sdk && npm run lint",
+    "format:check": "cd sdk && npm run format:check",
+    "test": "cd sdk && npm test",
+    "verify": "node scripts/verify-bundle.mjs",
+    "sync-version": "node scripts/sync-version.mjs",
+    "version:check": "node scripts/sync-version.mjs --check",
+    "version": "node scripts/sync-version.mjs && git add plugin/fast-open-cmp.php",
+    "test:e2e": "playwright test",
+    "e2e:seed": "docker compose exec -T db mariadb -uroot -proot wordpress < e2e/seed.sql",
+    "install:sdk": "cd sdk && npm install",
+    "install:all": "npm run install:sdk"
+  },
+  "author": "Lucas Web Art <https://lucaswebart.pl>",
+  "license": "GPL-2.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lrozewicz/fast-open-cmp.git"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0"
+  }
+}

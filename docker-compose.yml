@@ -1,0 +1,65 @@
+services:
+  wordpress:
+    image: wordpress:php8.3-apache
+    restart: unless-stopped
+    ports:
+      - "${WORDPRESS_PORT:-8089}:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: ${DB_USER:-wordpress}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD:-wordpress}
+      WORDPRESS_DB_NAME: ${DB_NAME:-wordpress}
+    volumes:
+      - wp_data:/var/www/html
+      - ./plugin:/var/www/html/wp-content/plugins/fast-open-cmp
+      - ./docs/examples:/var/www/html/examples
+      # Upload size/time for consent log imports and backup restores.
+      - ./docker/php/uploads.ini:/usr/local/etc/php/conf.d/zz-focmp-uploads.ini:ro
+      # Dev-only: disable WP update phone-home + pseudo-cron (see the file header).
+      - ./docker/dev/mu-plugins/focmp-dev.php:/var/www/html/wp-content/mu-plugins/focmp-dev.php
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mariadb:11
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_NAME:-wordpress}
+      MYSQL_USER: ${DB_USER:-wordpress}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-wordpress}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root}
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    restart: unless-stopped
+    ports:
+      - "${PHPMYADMIN_PORT:-8090}:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: ${DB_USER:-wordpress}
+      PMA_PASSWORD: ${DB_PASSWORD:-wordpress}
+    depends_on:
+      db:
+        condition: service_healthy
+
+  node:
+    image: node:18-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+      - sdk_node_modules:/app/sdk/node_modules
+    profiles: ["tools"]
+
+volumes:
+  wp_data:
+  db_data:
+  sdk_node_modules:

@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+
+# SDK build output (source is in sdk/src, built file committed in plugin/assets/js/)
+sdk/dist/
+
+# Claude Code
+.claude/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# temp
+test.txt
+screens
+.mcp.json
+playwright-output
+playwright-mcp
+playwright-mcp-config.json
+
+# Playwright E2E artifacts
+test-results/
+playwright-report/
+blob-report/
+.playwright-mcp/
+# PHP / PHPUnit
+plugin/vendor/
+plugin/tests/phpunit.phar
+plugin/.phpunit.cache/
+analiza.md
+
+# E2E admin session (cookies)
+e2e/.auth/
