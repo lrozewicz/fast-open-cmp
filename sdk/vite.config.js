@@ -18,7 +18,7 @@ export default defineConfig({
   base: './',
   resolve: {
     alias: {
-      '@': resolve(__dirname, './src'),
+      '@': resolve(import.meta.dirname, './src'),
     },
   },
   server: {
@@ -31,17 +31,29 @@ export default defineConfig({
     }
   },
   build: {
+    // The consent box runs on every page of client sites: keep the browser baseline of Vite 5
+    // ('modules'), not the newer Vite 7+ default ('baseline-widely-available', Safari 16.4+).
+    target: ['es2020', 'edge88', 'firefox78', 'chrome87', 'safari14'],
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: true,
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: resolve(import.meta.dirname, 'src/index.ts'),
       name: 'cmpFramework',
       fileName: 'index',
       formats: ['iife'],
     },
-    rollupOptions: {
+    rolldownOptions: {
+      // Production build: strip noisy/data-leaking console.log/info/debug from the bundle.
+      // Marked as side-effect-free so they are tree-shaken (their return value is unused).
+      // console.warn / console.error are kept on purpose for real error reporting.
+      treeshake: {
+        manualPureFunctions: ['console.log', 'console.info', 'console.debug'],
+      },
       output: {
+        minify: {
+          compress: { dropDebugger: true },
+        },
         entryFileNames: 'src/[name].js',
         chunkFileNames: 'src/[name].js',
         assetFileNames: 'assets/[name].[ext]',
@@ -71,14 +83,6 @@ export default defineConfig({
     devSourcemap: true,
   },
   optimizeDeps: {
-    include: ['@iabtcf/core']
+    include: ['@iabtechlabtcf/core']
   },
-  esbuild: {
-    legalComments: 'none',
-    // Production build: strip noisy/data-leaking console.log/info/debug from the bundle.
-    // Marked as side-effect-free so esbuild tree-shakes them (their return value is unused).
-    // console.warn / console.error are kept on purpose for real error reporting.
-    pure: ['console.log', 'console.info', 'console.debug'],
-    drop: ['debugger'],
-  }
 });

@@ -7,7 +7,9 @@
  * rebuild, or edits the bundle by hand). This script rebuilds the SDK and asserts
  * the freshly built bundle byte-matches the committed one.
  *
- * Exit 0 = in sync. Exit 1 = drift (rebuild + commit the bundle).
+ * Also asserts the bundle has no console.log/info/debug calls.
+ *
+ * Exit 0 = in sync. Exit 1 = drift (rebuild + commit the bundle) or console calls.
  * Run via `npm run verify` from the repo root.
  */
 import { spawnSync } from 'node:child_process';
@@ -41,6 +43,14 @@ for (const f of [built, committed]) {
 
 const a = readFileSync(built);
 const b = readFileSync(committed);
+
+// console.log/info/debug are stripped from the production bundle (vite.config.js,
+// treeshake.manualPureFunctions) because they can leak data; make sure that stays true.
+const leaked = b.toString().match(/console\.(log|info|debug)\b/g);
+if (leaked) {
+  console.error(`✖ ${leaked.length} console.log/info/debug call(s) in ${committed}; check vite.config.js.`);
+  process.exit(1);
+}
 
 if (a.equals(b)) {
   console.log('✔ Bundle is in sync with source (sdk/dist/src/index.js === plugin/assets/js/cmp-sdk.js).');
