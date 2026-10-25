@@ -16,7 +16,7 @@
         "prod": "node build-and-serve.js"
     },
     "devDependencies": {
-        "@eslint/js": "^9.39.4",
+        "@eslint/js": "^10.0.1",
         "@iabtechlabtcf/testing": "^1.5.22",
         "eslint": "^10.13.0",
         "eslint-config-prettier": "^9.1.2",
