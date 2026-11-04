@@ -36,7 +36,7 @@ COPY --from=php-test /php-ok /
 # ---------------------------------------------------------------- runtime
 # Written out (not an ARG) so Dependabot proposes WordPress updates.
 # Keep the PHP version in sync with the php-test stage above.
-FROM wordpress:7.1.3-php8.3-apache AS runtime
+FROM wordpress:7.1.4-php8.3-apache AS runtime
 
 ARG WP_CLI_VERSION=2.12.0
 ARG WP_CLI_SHA512=be928f6b8ca1e8dfb9d2f4b75a13aa4aee0896f8a9a0a1c45cd5d2c98605e6172e6d014dda2e27f88c98befc16c040cbb2bd1bfa121510ea5cdf5f6a30fe8832
